@@ -22,8 +22,8 @@ export const Login = () => {
 
     const { handleSubmit } = methods
 
-    const handleButtonPress = () => {
-        Alert.alert("Enviar usuário e senha para a API")
+    const handleButtonPress = (data: LoginFormValues) => {
+        Alert.alert(`Enviar usuário e senha para a API: ${data}`)
     }
 
     return (
