@@ -8,13 +8,15 @@ import { Form } from "../../components/Form"
 import { FormTextField } from "../../components/Form/FormTextField"
 import { Header } from "../../components/Header"
 import { LoginFormFields, LoginFormValues, LoginSchema } from "./LoginSchema"
+import { useLogin } from "../../hooks/useLogin"
 
 const FORM_DEFAULT_VALUES = {
-    username: '',
-    password: '',
+    username: "",
+    password: "",
 }
 
 export const Login = () => {
+    const { loading, loginUser } = useLogin();
     const methods = useForm<LoginFormValues>({
         defaultValues: FORM_DEFAULT_VALUES,
         resolver: yupResolver(LoginSchema)
@@ -22,9 +24,9 @@ export const Login = () => {
 
     const { handleSubmit } = methods
 
-    const handleButtonPress = (data: LoginFormValues) => {
-        Alert.alert(`Enviar usuário e senha para a API: ${data}`)
-    }
+    const handleSubmitLogin = async (data: LoginFormValues) => {
+        await loginUser(data);
+    };
 
     return (
         <View style={styles.container}>
@@ -41,7 +43,7 @@ export const Login = () => {
                     label="Senha"
                     placeholder="Digite sua senha"
                 />
-                <Button fullWidth label="Salvar" onPress={handleSubmit(handleButtonPress)} />
+                <Button fullWidth label="Salvar" loading={loading} onPress={handleSubmit(handleSubmitLogin)} />
             </Form>
         </View>
     )
@@ -50,8 +52,8 @@ export const Login = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fafafa',
-        alignItems: 'center',
-        justifyContent: 'center'
+        backgroundColor: "#fafafa",
+        alignItems: "center",
+        justifyContent: "center"
     }
 })
