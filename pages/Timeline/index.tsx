@@ -1,32 +1,59 @@
-import { useState } from "react"
+import type { PostResponse } from "../../api"
+
+import { useEffect, useState } from "react"
 import { StyleSheet, View } from "react-native"
 
 import { FormSearch } from "../../components/Form/FormSearch"
 import { SearchFormValues } from "../../components/Form/FormSearch/SearchSchema"
 import { Header } from "../../components/Header"
 import { TimelineContent } from "../../components/TimelineContent"
+import { PageLayout } from "../../templates/PageLayout"
+
+import { useListPosts } from "../../hooks/useListPosts"
+import { useSearchPost } from "../../hooks/useSearchPost"
 
 export const Timeline = () => {
-    const [currentList] = useState([])
+    const [currentList, setCurrentList] = useState<Array<PostResponse>>([])
 
-    const handleSearch = (data: SearchFormValues) => {
-        console.log('Search data:', data)
+    const { getListPosts, postsList, requestStatus } = useListPosts()
+    const { loading, searchPost, posts } = useSearchPost()
+
+    const hasError = requestStatus === "error"
+    const isLoading = requestStatus === "loading" || loading
+
+    const handleSearch = async (data: SearchFormValues) => {
+        await searchPost(data.word)
     }
 
+    useEffect(() => {
+        setCurrentList(posts)
+    }, [posts])
+
+    useEffect(() => {
+        setCurrentList(postsList)
+    }, [postsList])
+
+    useEffect(() => {
+        void getListPosts()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
+
     return (
-        <View style={styles.container}>
-            <Header />
-            <FormSearch onSearch={handleSearch} />
-            <TimelineContent onTryAgain={() => console.log('Clicou no erro')} posts={currentList} />
-        </View>
+        <PageLayout>
+            <View style={styles.container}>
+                <Header />
+                <FormSearch onSearch={handleSearch} />
+                <TimelineContent error={hasError} loading={isLoading} onTryAgain={() => void getListPosts()} posts={currentList} />
+            </View>
+        </PageLayout>
     )
 }
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fafafa',
-        alignItems: 'center',
-        justifyContent: 'center'
+        backgroundColor: "#fafafa",
+        alignItems: "center",
+        justifyContent: "center"
     }
 })

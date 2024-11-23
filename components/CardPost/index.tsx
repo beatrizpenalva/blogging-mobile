@@ -1,10 +1,6 @@
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native"
+import type { PostResponse } from "../../api"
 
-type PostResponse = {
-    content: string;
-    id: string | number;
-    title: string;
-}
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native"
 
 type CardPostProps = {
     post: PostResponse;

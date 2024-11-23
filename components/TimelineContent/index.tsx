@@ -1,15 +1,11 @@
+import type { PostResponse } from "../../api"
+
 import { StyleSheet, View } from "react-native"
 
 import { CardPost } from "../CardPost"
 import { EmptyState } from "..//EmptyState"
 import { ErrorState } from "../ErrorState"
 import { Skeleton } from "../Skeleton"
-
-type PostResponse = {
-    content: string;
-    id: string | number;
-    title: string;
-}
 
 type TimelineContentProps = {
     error?: boolean;

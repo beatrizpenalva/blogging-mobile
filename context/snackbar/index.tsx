@@ -1,6 +1,6 @@
 import type { SnackbarProps } from "../../components/Snackbar"
 
-import { createContext } from "react"
+import { createContext, useMemo, useState, type PropsWithChildren } from "react"
 
 export const DEFAULT_SNACKBAR_STATE: SnackbarProps = {
     message: "",
@@ -21,3 +21,18 @@ export const SnackbarContext = createContext({
         }
     },
 })
+
+type SnackbarProviderProps = PropsWithChildren
+
+export const SnackbarProvider = ({ children }: SnackbarProviderProps) => {
+    const [snackbar, setSnackbar] = useState<SnackbarProps>(DEFAULT_SNACKBAR_STATE)
+
+    const memoizedSnackbar = useMemo(() => ({
+        snackbar,
+        setSnackbar,
+    }), [snackbar, setSnackbar])
+
+    return (
+        <SnackbarContext.Provider value={memoizedSnackbar}>{children}</SnackbarContext.Provider>
+    )
+}
