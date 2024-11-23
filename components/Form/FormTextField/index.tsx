@@ -7,11 +7,12 @@ type FormTextFieldProps = {
     inputMode?: InputModeOptions;
     hideValue?: boolean;
     label: string;
+    multiline?: boolean;
     placeholder?: string;
     srLabel?: string;
 }
 
-export const FormTextField = ({ fieldName, hideValue = false, inputMode = "text", label, placeholder = '', srLabel }: FormTextFieldProps) => {
+export const FormTextField = ({ fieldName, hideValue = false, inputMode = "text", label, multiline = false, placeholder = "", srLabel }: FormTextFieldProps) => {
     const {
         field: { onChange, value },
         fieldState: { error }
@@ -24,6 +25,7 @@ export const FormTextField = ({ fieldName, hideValue = false, inputMode = "text"
             <Text>{label}</Text>
             <TextInput
                 inputMode={inputMode}
+                multiline={multiline}
                 onChangeText={onChange}
                 placeholder={placeholder}
                 secureTextEntry={hideValue}
