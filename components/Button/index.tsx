@@ -1,4 +1,4 @@
-import { FlexAlignType, FlexStyle, Pressable, StyleSheet, Text, type PressableProps } from "react-native"
+import { Pressable, StyleSheet, Text, type PressableProps } from "react-native"
 
 enum VariantButtonClassNames {
     primary = "btn-primary",
