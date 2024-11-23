@@ -1,4 +1,5 @@
 import { api } from "./config"
+import { UserProfile } from "../model/enums";
 
 type ApiResponse<T> = {
     data: T;
@@ -28,6 +29,10 @@ export type PostResponse = {
 export type UserPayload = {
     username: string;
     password: string;
+}
+
+export type CreateUserPayload = UserPayload & {
+    profile: UserProfile;
 }
 
 const BASE_URL_POSTS = "/posts"
@@ -72,6 +77,12 @@ export const postPost = async (token: string, payload: PostPayload): Promise<Api
 
 export const postLogin = async (payload: UserPayload): Promise<Token> => {
     const { data } = await api.post<ApiResponse<Token>>(`${BASE_URL_USERS}/login`, payload)
+
+    return data.data
+}
+
+export const postUser = async (payload: CreateUserPayload): Promise<Token> => {
+    const { data } = await api.post<ApiResponse<Token>>(BASE_URL_USERS, payload)
 
     return data.data
 }
