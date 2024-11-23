@@ -5,7 +5,7 @@ import { MAX_CHAR_CONTENT, MAX_CHAR_TITLE } from "../../utils/constants"
 import { getFormFields } from "../../utils/getFormFields"
 
 export const PostSchema = yupObject({
-    description: yupString()
+    content: yupString()
         .required('Campo obrigatório')
         .test({
             name: 'maxCharacters',
