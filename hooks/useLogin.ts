@@ -23,7 +23,6 @@ export const useLogin = () => {
             navigate("app/screens/Timeline/index")
         } catch {
             setSnackbar({
-                show: true,
                 message: "Não foi possível fazer login. Por favor, tente novamente mais tarde.",
                 variant: "error"
             })

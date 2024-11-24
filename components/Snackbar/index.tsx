@@ -10,6 +10,8 @@ export type SnackbarProps = {
 export const Snackbar = ({ message, show = false, variant = "success" }: SnackbarProps) => {
     const [visible, setVisible] = useState(show)
 
+    const color = variant === "success" ? "#69A54C" : "#ab1616"
+
     const hideSnackbar = () => setVisible(false)
 
     useEffect(() => {
@@ -20,7 +22,7 @@ export const Snackbar = ({ message, show = false, variant = "success" }: Snackba
         <RNPSnackbar
             onDismiss={hideSnackbar}
             visible={visible}
-            wrapperStyle={{ backgroundColor: variant }}
+            style={{ backgroundColor: color }}
         >
             {message}
         </RNPSnackbar>

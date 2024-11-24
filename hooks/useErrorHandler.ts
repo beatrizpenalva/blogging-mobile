@@ -19,7 +19,6 @@ export const useErrorHandler = () => {
 
             setSnackbar({
                 message: "Permissão expirada. Por favor, faça o login novamente.",
-                show: true,
                 variant: "error"
             })
 
@@ -27,7 +26,6 @@ export const useErrorHandler = () => {
         } else {
             setSnackbar({
                 message,
-                show: true,
                 variant: "error"
             })
         }

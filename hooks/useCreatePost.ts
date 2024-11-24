@@ -22,7 +22,6 @@ export const useCreatePost = () => {
             await postPost(token, { content, title })
 
             setSnackbar({
-                show: true,
                 message: "Publicação criada com sucesso.",
                 variant: "success"
             })

@@ -18,7 +18,6 @@ export const useSearchPost = () => {
             setPosts(data)
         } catch {
             setSnackbar({
-                show: true,
                 message: "Ocorreu um erro. Por favor, tente novamente mais tarde.",
                 variant: "error"
             })
