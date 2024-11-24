@@ -23,11 +23,16 @@ export const FormDropdown = ({ fieldName, label: inputLabel, options }: FormDrop
     const hasError = Boolean(Object.keys(error ?? {}).length)
 
     return (
-        <View>
-            <Text>{inputLabel}</Text>
+        <View style={styles.inputWrapper}>
+            <Text style={styles.inputLabel}>{inputLabel}</Text>
             <RNPickerSelect
-                onValueChange={onChange}
                 items={options}
+                onValueChange={onChange}
+                style={{
+                    inputWeb: styles.input,
+                    inputAndroid: styles.input,
+                    inputIOS: styles.input
+                }}
                 value={value}
             />
             {hasError && <Text style={styles.error}>{error?.message}</Text>}
@@ -36,6 +41,22 @@ export const FormDropdown = ({ fieldName, label: inputLabel, options }: FormDrop
 }
 
 const styles = StyleSheet.create({
+    input: {
+        height: 48,
+        borderColor: "#276cb1",
+        borderWidth: 1,
+        borderRadius: 4,
+        paddingHorizontal: 8,
+    },
+    inputLabel: {
+        color: "#276cb1",
+        fontWeight: "bold",
+    },
+    inputWrapper: {
+        width: "100%",
+        display: "flex",
+        gap: 8,
+    },
     error: {
         color: "#ab1616",
         fontSize: 12,

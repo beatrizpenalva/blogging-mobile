@@ -29,7 +29,7 @@ export const Login = () => {
     }
 
     return (
-        < PageLayout>
+        <PageLayout>
             <View style={styles.container}>
                 <Form methods={methods}>
                     <FormTextField

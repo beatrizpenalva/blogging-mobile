@@ -22,7 +22,6 @@ export const useRegister = () => {
         } else {
             setLoading(true)
             try {
-
                 await postUser(data)
 
                 onSuccess()
