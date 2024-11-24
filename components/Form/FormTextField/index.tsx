@@ -1,15 +1,15 @@
-import { StyleSheet, Text, TextInput, View, type InputModeOptions } from "react-native";
+import { StyleSheet, Text, TextInput, View, type InputModeOptions } from "react-native"
 
 import { useController } from "react-hook-form"
 
 type FormTextFieldProps = {
-    fieldName: string;
-    inputMode?: InputModeOptions;
-    hideValue?: boolean;
-    label: string;
-    multiline?: boolean;
-    placeholder?: string;
-    srLabel?: string;
+    fieldName: string
+    inputMode?: InputModeOptions
+    hideValue?: boolean
+    label: string
+    multiline?: boolean
+    placeholder?: string
+    srLabel?: string
 }
 
 export const FormTextField = ({ fieldName, hideValue = false, inputMode = "text", label, multiline = false, placeholder = "", srLabel }: FormTextFieldProps) => {
@@ -21,8 +21,8 @@ export const FormTextField = ({ fieldName, hideValue = false, inputMode = "text"
     const hasError = Boolean(Object.keys(error ?? {}).length)
 
     return (
-        <View>
-            <Text>{label}</Text>
+        <View style={styles.inputWrapper}>
+            <Text style={styles.inputLabel}>{label}</Text>
             <TextInput
                 inputMode={inputMode}
                 multiline={multiline}
@@ -45,7 +45,15 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderRadius: 4,
         paddingHorizontal: 8,
+    },
+    inputLabel: {
+        color: "#276cb1",
+        fontWeight: "bold",
+    },
+    inputWrapper: {
         width: "100%",
+        display: "flex",
+        gap: 8,
     },
     error: {
         color: "#ab1616",

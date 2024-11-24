@@ -1,9 +1,10 @@
 import type { PropsWithChildren } from "react"
-import { View } from "react-native";
+import { StyleSheet, View } from "react-native"
 
-import { PermissionProvider } from "../../context/permission";
+import { Header } from "../../components/Header"
+import { PermissionProvider } from "../../context/permission"
 import { Snackbar } from "../../components/Snackbar"
-import { SnackbarProvider } from "../../context/snackbar";
+import { SnackbarProvider } from "../../context/snackbar"
 import { useSnackbar } from "../../hooks/useSnackbar"
 
 type PageLayoutProps = PropsWithChildren<{}>
@@ -11,12 +12,13 @@ type PageLayoutProps = PropsWithChildren<{}>
 export const PageLayout = ({
     children,
 }: PageLayoutProps) => {
-    const { snackbar } = useSnackbar();
+    const { snackbar } = useSnackbar()
 
     return (
         <PermissionProvider>
             <SnackbarProvider>
-                <View>{children}</View>
+                <Header />
+                <View style={styles.container}>{children}</View>
                 <Snackbar
                     message={snackbar.message}
                     show={snackbar.show}
@@ -24,5 +26,11 @@ export const PageLayout = ({
                 />
             </SnackbarProvider>
         </PermissionProvider>
-    );
-};
+    )
+}
+
+const styles = StyleSheet.create({
+    container: {
+        height: "100%"
+    }
+})

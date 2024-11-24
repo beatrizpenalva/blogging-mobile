@@ -41,10 +41,10 @@ export const Button = ({
             accessibilityLabel={srLabel || label}
             disabled={disabled}
             onPress={onPress}
-            style={[styles.btn, styles[backgroundStyle], fullWidth ? styles["btn-fullWidht"] : ""]}
+            style={[styles.btn, styles[backgroundStyle], fullWidth ? styles["btn-fullWidht"] : "", loading ? styles["btn-loading"] : ""]}
             {...buttonProps}
         >
-            <Text style={[styles.label, styles[textStyle]]}>{loading ? "Carregando" : label}</Text>
+            <Text style={[styles.label, styles[textStyle]]}>{loading ? "Carregando..." : label}</Text>
         </Pressable >
     )
 }
@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
     btn: {
         borderRadius: 4,
         paddingHorizontal: 8,
-        paddingVertical: 4,
+        paddingVertical: 12,
         display: "flex",
         alignItems: "center",
         justifyContent: "center"
@@ -66,6 +66,9 @@ const styles = StyleSheet.create({
     },
     "btn-fullWidht": {
         width: "100%"
+    },
+    "btn-loading": {
+        backgroundColor: "#587796"
     },
     "btn-primary": {
         backgroundColor: "#276cb1",
