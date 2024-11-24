@@ -15,7 +15,7 @@ const FORM_DEFAULT_VALUES = {
     password: "",
 }
 
-export const Login = () => {
+const Login = () => {
     const { loading, loginUser } = useLogin()
     const methods = useForm<LoginFormValues>({
         defaultValues: FORM_DEFAULT_VALUES,
@@ -49,6 +49,8 @@ export const Login = () => {
         </PageLayout>
     )
 }
+
+export default Login
 
 const styles = StyleSheet.create({
     container: {

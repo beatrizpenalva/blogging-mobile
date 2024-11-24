@@ -1,13 +1,13 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack"
 
-import { CreatePost } from "../screens/CreatePost"
-import { Login } from "../screens/Login"
-import { Register } from "../screens/Register"
-import { Timeline } from "../screens/Timeline"
+import CreatePost from "../screens/CreatePost"
+import Login from "../screens/Login"
+import Register from "../screens/Register"
+import Timeline from "../screens/Timeline"
 
 const { Navigator, Screen } = createNativeStackNavigator()
 
-export const AppRoutes = () => {
+const AppRoutes = () => {
     return (
         <Navigator initialRouteName="screens/Login/index">
             <Screen
@@ -45,3 +45,5 @@ export const AppRoutes = () => {
         </Navigator>
     )
 }
+
+export default AppRoutes

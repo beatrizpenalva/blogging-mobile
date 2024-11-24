@@ -22,7 +22,7 @@ const FORM_DEFAULT_VALUES = {
     profile: UserProfile.viewer,
 }
 
-export const Register = () => {
+const Register = () => {
     const { navigate } = useNavigation<TimelineScreenNavigationProp>()
     const { loading, onRegister } = useRegister()
     const methods = useForm<RegisterFormValues>({
@@ -68,6 +68,8 @@ export const Register = () => {
         </PageLayout>
     )
 }
+
+export default Register
 
 const styles = StyleSheet.create({
     buttonsContainer: {

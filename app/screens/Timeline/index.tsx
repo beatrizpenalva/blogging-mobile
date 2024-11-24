@@ -12,7 +12,7 @@ import { PageLayout } from "../../../templates/PageLayout"
 import { useListPosts } from "../../../hooks/useListPosts"
 import { useSearchPost } from "../../../hooks/useSearchPost"
 
-export const Timeline = () => {
+const Timeline = () => {
     const [currentList, setCurrentList] = useState<Array<PostResponse>>([])
 
     const { getListPosts, postsList, requestStatus } = useListPosts()
@@ -48,6 +48,8 @@ export const Timeline = () => {
         </PageLayout>
     )
 }
+
+export default Timeline
 
 const styles = StyleSheet.create({
     container: {

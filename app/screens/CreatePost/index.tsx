@@ -19,7 +19,7 @@ const FORM_DEFAULT_VALUES = {
     description: "",
 }
 
-export const CreatePost = () => {
+const CreatePost = () => {
     const { loading, savePost } = useCreatePost()
     const { navigate } = useNavigation<TimelineScreenNavigationProp>()
     const methods = useForm<PostFormValues>({
@@ -59,6 +59,8 @@ export const CreatePost = () => {
         </PageLayout>
     )
 }
+
+export default CreatePost
 
 const styles = StyleSheet.create({
     buttonsContainer: {
