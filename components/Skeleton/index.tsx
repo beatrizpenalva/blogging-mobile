@@ -1,7 +1,13 @@
 import { useEffect } from "react"
 import { View, StyleSheet, Animated } from "react-native"
 
-export const Skeleton = () => {
+type SkeletonProps = {
+    height?: number
+    styles?: Record<string, string | number>
+    width?: number
+}
+
+export const Skeleton = ({ height, styles: customStyle, width }: SkeletonProps) => {
     const animation = new Animated.Value(0)
 
     useEffect(() => {
@@ -20,9 +26,9 @@ export const Skeleton = () => {
     })
 
     return (
-        <View style={styles.skeletonContainer}>
+        <View style={{ ...styles.skeletonContainer, ...customStyle, height, width }}>
             <Animated.View style={[styles.skeleton, { opacity }]} />
-        </View>
+        </View >
     )
 }
 
@@ -34,7 +40,6 @@ const styles = StyleSheet.create({
     },
     skeletonContainer: {
         width: "100%",
-        height: 20,
         backgroundColor: "#e0e0e0",
         borderRadius: 4,
         overflow: "hidden",

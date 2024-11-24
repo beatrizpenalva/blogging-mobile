@@ -16,9 +16,9 @@ type TimelineContentProps = {
 
 const LoadingState = () => (
     <View style={styles.container}>
-        <Skeleton />
-        <Skeleton />
-        <Skeleton />
+        <Skeleton height={96} width={320} />
+        <Skeleton height={96} width={320} />
+        <Skeleton height={96} width={320} />
     </View>
 )
 
@@ -51,5 +51,6 @@ export const TimelineContent = ({ error = false, loading = false, onTryAgain, po
 const styles = StyleSheet.create({
     container: {
         gap: 16,
+        flex: 1
     }
 })
