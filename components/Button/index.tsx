@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
         backgroundColor: "#ab1616",
     },
     "btn-danger-label": {
-        color: '#fafafa',
+        color: "#fafafa",
     },
     "btn-fullWidht": {
         width: "100%"

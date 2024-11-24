@@ -5,9 +5,9 @@ import { getFormFields } from "../../utils/getFormFields"
 
 export const LoginSchema = yupObject({
     username: yupString()
-        .required('Campo obrigatório'),
+        .required("Campo obrigatório"),
     password: yupString()
-        .required('Campo obrigatório')
+        .required("Campo obrigatório")
 }).required()
 
 export type LoginFormValues = yupInferType<typeof LoginSchema>

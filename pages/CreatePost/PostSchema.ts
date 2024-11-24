@@ -6,9 +6,9 @@ import { getFormFields } from "../../utils/getFormFields"
 
 export const PostSchema = yupObject({
     content: yupString()
-        .required('Campo obrigatório')
+        .required("Campo obrigatório")
         .test({
-            name: 'maxCharacters',
+            name: "maxCharacters",
             test: (value, ctx) => {
                 if (value.length > MAX_CHAR_CONTENT) {
                     return ctx.createError({ message: `O número máximo de caracteres é ${MAX_CHAR_CONTENT}` })
@@ -18,9 +18,9 @@ export const PostSchema = yupObject({
             }
         }),
     title: yupString()
-        .required('Campo obrigatório')
+        .required("Campo obrigatório")
         .test({
-            name: 'maxCharacters',
+            name: "maxCharacters",
             test: (value, ctx) => {
                 if (value.length > MAX_CHAR_TITLE) {
                     return ctx.createError({ message: `O número máximo de caracteres é ${MAX_CHAR_TITLE}` })

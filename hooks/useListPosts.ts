@@ -8,7 +8,7 @@ type RequestStatus = "idle" | "error" | "loading" | "success"
 
 export const useListPosts = () => {
     const [postsList, setPostsList] = useState<Array<PostResponse>>([])
-    const [requestStatus, setRequestStatus] = useState<RequestStatus>('idle')
+    const [requestStatus, setRequestStatus] = useState<RequestStatus>("idle")
 
     const getListPosts = async () => {
         setRequestStatus("loading")

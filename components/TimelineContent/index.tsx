@@ -51,8 +51,8 @@ export const TimelineContent = ({ error = false, loading = false, onTryAgain, po
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fafafa',
-        alignItems: 'center',
-        justifyContent: 'center'
+        backgroundColor: "#fafafa",
+        alignItems: "center",
+        justifyContent: "center"
     }
 })

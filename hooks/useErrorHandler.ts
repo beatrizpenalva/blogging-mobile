@@ -16,7 +16,7 @@ export const useErrorHandler = () => {
             setSnackbar({
                 message: "Permissão expirada. Por favor, faça o login novamente.",
                 show: true,
-                variant: 'error'
+                variant: "error"
             })
 
             // TODO: Redirecionar para a tela de Login
