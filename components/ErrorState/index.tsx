@@ -1,5 +1,7 @@
 import { StyleSheet, Text, View } from "react-native"
 
+import Ionicons from "react-native-vector-icons/Ionicons"
+
 import { Button } from "../Button"
 
 type ErrorStateProps = {
@@ -8,20 +10,29 @@ type ErrorStateProps = {
 
 export const ErrorState = ({ onTryAgain }: ErrorStateProps) => (
     <View style={styles.container}>
-        <Text>Ocorreu um erro</Text>
-        <Text>Não conseguimos efetuar a busca. Por favor, tente novamente.</Text>
+        <Ionicons name="close" color="#ab1616" size={32} />
+        <Text style={styles.title}>Ocorreu um erro</Text>
+        <Text style={styles.description}>Não conseguimos efetuar a busca. Por favor, tente novamente.</Text>
         <Button onPress={onTryAgain} label="Tentar novamente" />
     </View>
 )
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: "#276cb1",
         display: "flex",
-        flexDirection: "row",
+        flexDirection: "column",
+        gap: 12,
         alignItems: "center",
-        justifyContent: "space-between",
-        padding: 16,
-        width: "100%"
+        justifyContent: "center",
+        width: "100%",
+        flex: 1
+    },
+    description: {
+        textAlign: "center",
+        fontSize: 16,
+    },
+    title: {
+        fontWeight: "bold",
+        fontSize: 16,
     }
 })

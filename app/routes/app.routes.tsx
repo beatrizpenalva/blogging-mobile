@@ -1,6 +1,8 @@
 import { StyleSheet } from "react-native"
+
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
 import Ionicons from "react-native-vector-icons/Ionicons"
+
 import CreatePost from "../screens/CreatePost"
 import Login from "../screens/Login"
 import Register from "../screens/Register"

@@ -1,3 +1,5 @@
+import { StyleSheet, View } from "react-native"
+
 import { useForm } from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
 
@@ -24,13 +26,25 @@ export const FormSearch = ({ onSearch }: FormSearchProps) => {
     const { handleSubmit } = methods
 
     return (
-        <Form methods={methods}>
-            <FormTextField
-                fieldName={SearchFormFields.word}
-                label="Buscar"
-                placeholder="Digite uma palavra-chave"
-            />
-            <Button label="Buscar" onPress={handleSubmit(onSearch)} />
-        </Form>
+        <View style={styles.container}>
+            <Form methods={methods}>
+                <FormTextField
+                    fieldName={SearchFormFields.word}
+                    label="Buscar"
+                    placeholder="Digite uma palavra-chave"
+                />
+                <Button label="Buscar" onPress={handleSubmit(onSearch)} />
+            </Form>
+        </View>
     )
 }
+
+const styles = StyleSheet.create({
+    container: {
+        display: "flex",
+        flexDirection: "row",
+        gap: 8,
+        alignItems: "flex-end",
+        width: "100%"
+    },
+})

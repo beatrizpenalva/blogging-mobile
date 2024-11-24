@@ -5,7 +5,6 @@ import { StyleSheet, View } from "react-native"
 
 import { FormSearch } from "../../../components/Form/FormSearch"
 import { SearchFormValues } from "../../../components/Form/FormSearch/SearchSchema"
-import { Header } from "../../../components/Header"
 import { TimelineContent } from "../../../components/TimelineContent"
 import { PageLayout } from "../../../templates/PageLayout"
 
@@ -41,8 +40,9 @@ const Timeline = () => {
     return (
         <PageLayout>
             <View style={styles.container}>
-                <Header />
-                <FormSearch onSearch={handleSearch} />
+                <View style={styles.searchContainer}>
+                    <FormSearch onSearch={handleSearch} />
+                </View>
                 <TimelineContent error={hasError} loading={isLoading} onTryAgain={() => void getListPosts()} posts={currentList} />
             </View>
         </PageLayout>
@@ -55,7 +55,15 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: "#fafafa",
-        alignItems: "center",
-        justifyContent: "center"
+        alignItems: "flex-start",
+        justifyContent: "flex-start",
+        paddingHorizontal: 24,
+        paddingVertical: 32,
+        marginBottom: 62,
+    },
+    searchContainer: {
+        alignItems: "flex-start",
+        justifyContent: "flex-start",
+        marginBottom: 24,
     }
 })

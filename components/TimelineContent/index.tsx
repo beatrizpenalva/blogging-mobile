@@ -1,6 +1,6 @@
 import type { PostResponse } from "../../api"
 
-import { StyleSheet, View } from "react-native"
+import { ScrollView, StyleSheet, View } from "react-native"
 
 import { CardPost } from "../CardPost"
 import { EmptyState } from "..//EmptyState"
@@ -42,17 +42,14 @@ export const TimelineContent = ({ error = false, loading = false, onTryAgain, po
     }
 
     return (
-        <View style={styles.container}>
+        <ScrollView contentContainerStyle={styles.container}>
             {posts.map((item) => <CardPost key={item.id} post={item} />)}
-        </View>
+        </ScrollView>
     )
 }
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        backgroundColor: "#fafafa",
-        alignItems: "center",
-        justifyContent: "center"
+        gap: 16,
     }
 })

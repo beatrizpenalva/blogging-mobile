@@ -1,5 +1,7 @@
 import { StyleSheet, Text, View } from "react-native"
 
+import Ionicons from "react-native-vector-icons/Ionicons"
+
 type EmptyStateProps = {
     description: string
     title?: string
@@ -8,20 +10,29 @@ type EmptyStateProps = {
 export const EmptyState = ({ description, title }: EmptyStateProps) => {
     return (
         <View style={styles.container}>
-            <Text>{title || "Nenhuma publicação para exibir"}</Text>
-            <Text>{description}</Text>
+            <Ionicons name="search" color="#587796" size={32} />
+            <Text style={styles.title}>{title || "Nenhuma publicação para exibir"}</Text>
+            <Text style={styles.description}>{description}</Text>
         </View>
     )
 }
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: "#276cb1",
         display: "flex",
-        flexDirection: "row",
+        flexDirection: "column",
+        gap: 12,
         alignItems: "center",
-        justifyContent: "space-between",
-        padding: 16,
-        width: "100%"
+        justifyContent: "center",
+        width: "100%",
+        flex: 1
+    },
+    description: {
+        textAlign: "center",
+        fontSize: 16,
+    },
+    title: {
+        fontWeight: "bold",
+        fontSize: 16,
     }
 })

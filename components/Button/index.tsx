@@ -56,7 +56,8 @@ const styles = StyleSheet.create({
         paddingVertical: 12,
         display: "flex",
         alignItems: "center",
-        justifyContent: "center"
+        justifyContent: "center",
+        height: 48
     },
     "btn-danger": {
         backgroundColor: "#ab1616",
