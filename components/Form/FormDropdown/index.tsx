@@ -1,17 +1,17 @@
-import { StyleSheet, Text, View } from "react-native";
-import RNPickerSelect from 'react-native-picker-select';
+import { StyleSheet, Text, View } from "react-native"
+import RNPickerSelect from 'react-native-picker-select'
 
 import { useController } from "react-hook-form"
 
 type DropdownOption = {
-    label: string;
-    value: string | number | boolean;
+    label: string
+    value: string | number
 }
 
 type FormDropdownProps = {
-    fieldName: string;
-    label: string;
-    options: Array<DropdownOption>;
+    fieldName: string
+    label: string
+    options: Array<DropdownOption>
 }
 
 export const FormDropdown = ({ fieldName, label: inputLabel, options }: FormDropdownProps) => {

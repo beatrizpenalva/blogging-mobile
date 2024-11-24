@@ -1,13 +1,13 @@
-import type { InferType as yupInferType } from "yup";
-import { object as yupObject, string as yupString } from "yup";
+import type { InferType as yupInferType } from "yup"
+import { object as yupObject, string as yupString } from "yup"
 
-import { getFormFields } from "../../../utils/getFormFields";
+import { getFormFields } from "../../../utils/getFormFields"
 
 export const SearchSchema = yupObject({
     word: yupString()
-        .required('Campo obrigatório')
-}).required();
+        .required("Campo obrigatório")
+}).required()
 
-export type SearchFormValues = yupInferType<typeof SearchSchema>;
+export type SearchFormValues = yupInferType<typeof SearchSchema>
 
-export const SearchFormFields: SearchFormValues = getFormFields(SearchSchema.fields);
+export const SearchFormFields: SearchFormValues = getFormFields(SearchSchema.fields)

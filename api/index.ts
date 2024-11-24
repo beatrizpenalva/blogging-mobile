@@ -1,38 +1,38 @@
 import { api } from "./config"
-import { UserProfile } from "../model/enums";
+import { UserProfile } from "../model/enums"
 
 type ApiResponse<T> = {
-    data: T;
-    message: string;
-    statusCode: number;
+    data: T
+    message: string
+    statusCode: number
 }
 
 export type ApiResponseDataUnknown = ApiResponse<Record<string, unknown>>
 
 type Token = {
-    token: string;
+    token: string
 }
 
 export type PostPayload = {
-    title: string;
-    content: string;
+    title: string
+    content: string
 }
 
 export type PostResponse = {
-    id: string;
-    title: string;
-    content: string;
-    createdAt: Date;
-    updatedAt: Date;
+    id: string
+    title: string
+    content: string
+    createdAt: Date
+    updatedAt: Date
 }
 
 export type UserPayload = {
-    username: string;
-    password: string;
+    username: string
+    password: string
 }
 
 export type CreateUserPayload = UserPayload & {
-    profile: UserProfile;
+    profile: UserProfile
 }
 
 const BASE_URL_POSTS = "/posts"
@@ -55,12 +55,12 @@ export const getPostById = async (id: string | number): Promise<PostResponse> =>
 }
 
 export const getPostByKeyWord = async (word: string): Promise<PostResponse[]> => {
-    const { data } = await api.get<ApiResponse<PostResponse[]>>(`${BASE_URL_POSTS}/search?keyword=${word}`);
+    const { data } = await api.get<ApiResponse<PostResponse[]>>(`${BASE_URL_POSTS}/search?keyword=${word}`)
     return data.data
 }
 
 export const getPosts = async (): Promise<PostResponse[]> => {
-    const { data } = await api.get<ApiResponse<PostResponse[]>>(BASE_URL_POSTS);
+    const { data } = await api.get<ApiResponse<PostResponse[]>>(BASE_URL_POSTS)
 
     return data.data
 }

@@ -17,11 +17,11 @@ const FORM_DEFAULT_VALUES = {
 }
 
 export const CreatePost = () => {
-    const { loading, savePost } = useCreatePost();
+    const { loading, savePost } = useCreatePost()
     const methods = useForm<PostFormValues>({
         defaultValues: FORM_DEFAULT_VALUES,
         resolver: yupResolver(PostSchema)
-    });
+    })
 
     const { handleSubmit, reset } = methods
 
@@ -30,11 +30,11 @@ export const CreatePost = () => {
     }
 
     const handleReset = () => {
-        reset(FORM_DEFAULT_VALUES);
-    };
+        reset(FORM_DEFAULT_VALUES)
+    }
 
     const handleSavePost = async (data: PostFormValues) => {
-        await savePost(data);
+        await savePost(data)
     }
 
     return (

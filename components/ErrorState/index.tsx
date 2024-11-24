@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from "react-native"
 import { Button } from "../Button"
 
 type ErrorStateProps = {
-    onTryAgain: () => void;
+    onTryAgain: () => void
 }
 
 export const ErrorState = ({ onTryAgain }: ErrorStateProps) => (

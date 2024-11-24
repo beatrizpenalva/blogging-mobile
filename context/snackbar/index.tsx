@@ -9,8 +9,8 @@ export const DEFAULT_SNACKBAR_STATE: SnackbarProps = {
 }
 
 export type SnackbarContextValue = {
-    snackbar: SnackbarProps;
-    setSnackbar: (snackbar: SnackbarProps) => void;
+    snackbar: SnackbarProps
+    setSnackbar: (snackbar: SnackbarProps) => void
 }
 
 export const SnackbarContext = createContext({

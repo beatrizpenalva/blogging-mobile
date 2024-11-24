@@ -13,15 +13,15 @@ enum VariantLabelClassNames {
 }
 
 type ButtonProps = {
-    buttonProps?: object;
-    disabled?: boolean;
-    fullWidth?: boolean;
-    label: string;
-    loading?: boolean;
-    onPress: PressableProps["onPress"];
-    srLabel?: string;
-    variant?: "primary" | "secondary" | "danger";
-};
+    buttonProps?: object
+    disabled?: boolean
+    fullWidth?: boolean
+    label: string
+    loading?: boolean
+    onPress: PressableProps["onPress"]
+    srLabel?: string
+    variant?: "primary" | "secondary" | "danger"
+}
 
 export const Button = ({
     buttonProps,

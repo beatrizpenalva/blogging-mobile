@@ -1,12 +1,12 @@
 import { createContext, useMemo, useState, type PropsWithChildren } from "react"
 
 type PermissionContextState = {
-    token: string;
+    token: string
 }
 
 export type PermissionContextValue = {
-    token: string;
-    setToken: (token: string) => void;
+    token: string
+    setToken: (token: string) => void
 }
 
 export const DEFAULT_PERMISSION_STATE: PermissionContextState = {

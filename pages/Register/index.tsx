@@ -24,7 +24,7 @@ export const Register = () => {
     const methods = useForm<RegisterFormValues>({
         defaultValues: FORM_DEFAULT_VALUES,
         resolver: yupResolver(RegisterSchema)
-    });
+    })
 
     const { handleSubmit, reset } = methods
 

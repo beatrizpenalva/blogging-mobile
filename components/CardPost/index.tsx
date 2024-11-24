@@ -3,7 +3,7 @@ import type { PostResponse } from "../../api"
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native"
 
 type CardPostProps = {
-    post: PostResponse;
+    post: PostResponse
 }
 
 export const CardPost = ({ post }: CardPostProps) => {

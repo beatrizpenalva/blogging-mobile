@@ -8,9 +8,9 @@ import { ErrorState } from "../ErrorState"
 import { Skeleton } from "../Skeleton"
 
 type TimelineContentProps = {
-    error?: boolean;
-    loading?: boolean;
-    onTryAgain: () => void;
+    error?: boolean
+    loading?: boolean
+    onTryAgain: () => void
     posts: Array<PostResponse>
 }
 

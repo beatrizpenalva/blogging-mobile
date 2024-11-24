@@ -2,8 +2,8 @@ import { useEffect, useState } from "react"
 import { Snackbar as RNPSnackbar } from "react-native-paper"
 
 export type SnackbarProps = {
-    message: string;
-    show: boolean;
+    message: string
+    show: boolean
     variant: "error" | "success"
 }
 

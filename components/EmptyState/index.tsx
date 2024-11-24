@@ -1,9 +1,9 @@
 import { StyleSheet, Text, View } from "react-native"
 
 type EmptyStateProps = {
-    description: string;
-    title?: string;
-};
+    description: string
+    title?: string
+}
 
 export const EmptyState = ({ description, title }: EmptyStateProps) => {
     return (

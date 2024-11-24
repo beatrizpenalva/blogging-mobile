@@ -8,17 +8,18 @@ import { FormTextField } from "../FormTextField"
 import { SearchFormFields, SearchFormValues, SearchSchema } from "./SearchSchema"
 
 type FormSearchProps = {
-    onSearch: (data: SearchFormValues) => void;
+    onSearch: (data: SearchFormValues) => void
 }
+
 const FORM_DEFAULT_VALUES = {
-    word: '',
+    word: "",
 }
 
 export const FormSearch = ({ onSearch }: FormSearchProps) => {
     const methods = useForm<SearchFormValues>({
         defaultValues: FORM_DEFAULT_VALUES,
         resolver: yupResolver(SearchSchema)
-    });
+    })
 
     const { handleSubmit } = methods
 
