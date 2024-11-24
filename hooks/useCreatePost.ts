@@ -1,8 +1,9 @@
-import type { PostPayload } from "../api"
+import type { TimelineScreenNavigationProp } from "../app/routes/types"
 
 import { useState } from "react"
+import { useNavigation } from "@react-navigation/native"
 
-import { postPost } from "../api"
+import { postPost, type PostPayload } from "../api"
 import { useErrorHandler } from "./useErrorHandler"
 import { usePermission } from "./usePermission"
 import { useSnackbar } from "./useSnackbar"
@@ -11,6 +12,7 @@ export const useCreatePost = () => {
     const [loading, setLoading] = useState(false)
 
     const { errorHandler } = useErrorHandler()
+    const { navigate } = useNavigation<TimelineScreenNavigationProp>()
     const { token } = usePermission()
     const { setSnackbar } = useSnackbar()
 
@@ -25,7 +27,7 @@ export const useCreatePost = () => {
                 variant: "success"
             })
 
-            // TODO: Redirecionar para a timeline
+            navigate("app/screens/Timeline/index")
         } catch (e: unknown) {
             errorHandler(e, "Não foi possível salvar a publicação. Por favor, tente novamente mais tarde.")
         } finally {

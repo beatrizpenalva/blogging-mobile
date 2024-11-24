@@ -1,13 +1,16 @@
+import type { TimelineScreenNavigationProp } from "../../routes/types"
+
 import { StyleSheet, View } from "react-native"
 
+import { useNavigation } from "@react-navigation/native"
 import { useForm } from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
 
-import { Button } from "../../components/Button"
-import { Form } from "../../components/Form"
-import { FormTextField } from "../../components/Form/FormTextField"
-import { PageLayout } from "../../templates/PageLayout"
-import { useCreatePost } from "../../hooks/useCreatePost"
+import { Button } from "../../../components/Button"
+import { Form } from "../../../components/Form"
+import { FormTextField } from "../../../components/Form/FormTextField"
+import { PageLayout } from "../../../templates/PageLayout"
+import { useCreatePost } from "../../../hooks/useCreatePost"
 
 import { PostFormFields, PostFormValues, PostSchema } from "./PostSchema"
 
@@ -18,16 +21,13 @@ const FORM_DEFAULT_VALUES = {
 
 export const CreatePost = () => {
     const { loading, savePost } = useCreatePost()
+    const { navigate } = useNavigation<TimelineScreenNavigationProp>()
     const methods = useForm<PostFormValues>({
         defaultValues: FORM_DEFAULT_VALUES,
         resolver: yupResolver(PostSchema)
     })
 
     const { handleSubmit } = methods
-
-    const handleCancel = () => {
-        // TODO: Voltar para a tela inicial
-    }
 
     const handleSavePost = async (data: PostFormValues) => {
         await savePost(data)
@@ -52,7 +52,7 @@ export const CreatePost = () => {
                     />
                     <View style={styles.buttonsContainer}>
                         <Button fullWidth label="Salvar" loading={loading} onPress={handleSubmit(handleSavePost)} />
-                        <Button fullWidth label="Cancelar" onPress={handleCancel} variant="secondary" />
+                        <Button fullWidth label="Cancelar" onPress={() => navigate("app/screens/Timeline/index")} variant="secondary" />
                     </View>
                 </Form>
             </View>

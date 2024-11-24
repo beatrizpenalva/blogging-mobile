@@ -1,8 +1,8 @@
 import type { InferType as yupInferType } from "yup"
 import { object as yupObject, string as yupString } from "yup"
 
-import { MAX_CHAR_CONTENT, MAX_CHAR_TITLE } from "../../utils/constants"
-import { getFormFields } from "../../utils/getFormFields"
+import { MAX_CHAR_CONTENT, MAX_CHAR_TITLE } from "../../../utils/constants"
+import { getFormFields } from "../../../utils/getFormFields"
 
 export const PostSchema = yupObject({
     content: yupString()

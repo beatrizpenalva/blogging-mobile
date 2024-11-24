@@ -1,14 +1,16 @@
-import type { UserPayload } from "../api"
+import type { TimelineScreenNavigationProp } from "../app/routes/types"
 
 import { useState } from "react"
+import { useNavigation } from "@react-navigation/native"
 
-import { postLogin } from "../api"
+import { postLogin, type UserPayload } from "../api"
 import { usePermission } from "./usePermission"
 import { useSnackbar } from "./useSnackbar"
 
 export const useLogin = () => {
     const [loading, setLoading] = useState(false)
 
+    const { navigate } = useNavigation<TimelineScreenNavigationProp>()
     const { setToken } = usePermission()
     const { setSnackbar } = useSnackbar()
 
@@ -18,7 +20,7 @@ export const useLogin = () => {
             const { token } = await postLogin({ username, password })
             setToken(token)
 
-            // TODO: Redirecionar para a timeline
+            navigate("app/screens/Timeline/index")
         } catch {
             setSnackbar({
                 show: true,

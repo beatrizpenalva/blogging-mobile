@@ -1,15 +1,18 @@
+import type { TimelineScreenNavigationProp } from "../../routes/types"
+
 import { StyleSheet, View } from "react-native"
 
+import { useNavigation } from "@react-navigation/native"
 import { useForm } from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
 
-import { Button } from "../../components/Button"
-import { Form } from "../../components/Form"
-import { FormDropdown } from "../../components/Form/FormDropdown"
-import { FormTextField } from "../../components/Form/FormTextField"
-import { PageLayout } from "../../templates/PageLayout"
-import { useRegister } from "../../hooks/useRegister"
-import { UserProfile, UserProfileLabels } from "../../model/enums"
+import { Button } from "../../../components/Button"
+import { Form } from "../../../components/Form"
+import { FormDropdown } from "../../../components/Form/FormDropdown"
+import { FormTextField } from "../../../components/Form/FormTextField"
+import { PageLayout } from "../../../templates/PageLayout"
+import { useRegister } from "../../../hooks/useRegister"
+import { UserProfile, UserProfileLabels } from "../../../model/enums"
 
 import { RegisterFormFields, RegisterFormValues, RegisterSchema } from "./RegisterSchema"
 
@@ -20,6 +23,7 @@ const FORM_DEFAULT_VALUES = {
 }
 
 export const Register = () => {
+    const { navigate } = useNavigation<TimelineScreenNavigationProp>()
     const { loading, onRegister } = useRegister()
     const methods = useForm<RegisterFormValues>({
         defaultValues: FORM_DEFAULT_VALUES,
@@ -27,10 +31,6 @@ export const Register = () => {
     })
 
     const { handleSubmit, reset } = methods
-
-    const handleCancel = () => {
-        // TODO: Voltar para a tela inicial
-    }
 
     const handleSaveNewUser = (data: RegisterFormValues) => {
         onRegister(data, reset)
@@ -61,7 +61,7 @@ export const Register = () => {
                     />
                     <View style={styles.buttonsContainer}>
                         <Button fullWidth label="Salvar" loading={loading} onPress={handleSubmit(handleSaveNewUser)} />
-                        <Button disabled={loading} fullWidth label="Cancelar" onPress={handleCancel} variant="secondary" />
+                        <Button disabled={loading} fullWidth label="Cancelar" onPress={() => navigate("app/screens/Timeline/index")} variant="secondary" />
                     </View>
                 </Form>
             </View>

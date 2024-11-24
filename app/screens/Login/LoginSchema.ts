@@ -1,7 +1,7 @@
 import type { InferType as yupInferType } from "yup"
 import { object as yupObject, string as yupString } from "yup"
 
-import { getFormFields } from "../../utils/getFormFields"
+import { getFormFields } from "../../../utils/getFormFields"
 
 export const LoginSchema = yupObject({
     username: yupString()

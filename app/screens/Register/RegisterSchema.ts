@@ -1,8 +1,8 @@
 import type { InferType as yupInferType } from "yup"
 import { object as yupObject, string as yupString } from "yup"
 
-import { UserProfile } from "../../model/enums"
-import { getFormFields } from "../../utils/getFormFields"
+import { UserProfile } from "../../../model/enums"
+import { getFormFields } from "../../../utils/getFormFields"
 
 export const RegisterSchema = yupObject({
     username: yupString()

@@ -3,12 +3,12 @@ import { Alert, StyleSheet, View } from "react-native"
 import { useForm } from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
 
-import { Button } from "../../components/Button"
-import { Form } from "../../components/Form"
-import { FormTextField } from "../../components/Form/FormTextField"
-import { PageLayout } from "../../templates/PageLayout"
+import { Button } from "../../../components/Button"
+import { Form } from "../../../components/Form"
+import { FormTextField } from "../../../components/Form/FormTextField"
+import { PageLayout } from "../../../templates/PageLayout"
 import { LoginFormFields, LoginFormValues, LoginSchema } from "./LoginSchema"
-import { useLogin } from "../../hooks/useLogin"
+import { useLogin } from "../../../hooks/useLogin"
 
 const FORM_DEFAULT_VALUES = {
     username: "",

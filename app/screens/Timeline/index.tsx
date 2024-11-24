@@ -1,16 +1,16 @@
-import type { PostResponse } from "../../api"
+import type { PostResponse } from "../../../api"
 
 import { useEffect, useState } from "react"
 import { StyleSheet, View } from "react-native"
 
-import { FormSearch } from "../../components/Form/FormSearch"
-import { SearchFormValues } from "../../components/Form/FormSearch/SearchSchema"
-import { Header } from "../../components/Header"
-import { TimelineContent } from "../../components/TimelineContent"
-import { PageLayout } from "../../templates/PageLayout"
+import { FormSearch } from "../../../components/Form/FormSearch"
+import { SearchFormValues } from "../../../components/Form/FormSearch/SearchSchema"
+import { Header } from "../../../components/Header"
+import { TimelineContent } from "../../../components/TimelineContent"
+import { PageLayout } from "../../../templates/PageLayout"
 
-import { useListPosts } from "../../hooks/useListPosts"
-import { useSearchPost } from "../../hooks/useSearchPost"
+import { useListPosts } from "../../../hooks/useListPosts"
+import { useSearchPost } from "../../../hooks/useSearchPost"
 
 export const Timeline = () => {
     const [currentList, setCurrentList] = useState<Array<PostResponse>>([])

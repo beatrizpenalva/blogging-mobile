@@ -1,9 +1,13 @@
 import type { ApiResponseDataUnknown } from "../api"
+import type { LoginScreenNavigationProp } from "../app/routes/types"
+
+import { useNavigation } from "@react-navigation/native"
 
 import { usePermission } from "./usePermission"
 import { useSnackbar } from "./useSnackbar"
 
 export const useErrorHandler = () => {
+    const { navigate } = useNavigation<LoginScreenNavigationProp>()
     const { setToken } = usePermission()
     const { setSnackbar } = useSnackbar()
 
@@ -19,9 +23,7 @@ export const useErrorHandler = () => {
                 variant: "error"
             })
 
-            // TODO: Redirecionar para a tela de Login
-
-            return
+            navigate("app/screens/Timeline/index")
         } else {
             setSnackbar({
                 message,
