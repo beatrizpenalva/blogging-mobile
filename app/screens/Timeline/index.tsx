@@ -7,6 +7,7 @@ import { FormSearch } from "../../../components/Form/FormSearch"
 import { SearchFormValues } from "../../../components/Form/FormSearch/SearchSchema"
 import { TimelineContent } from "../../../components/TimelineContent"
 import { PageLayout } from "../../../templates/PageLayout"
+import { Colors } from "../../../model/enums"
 
 import { useListPosts } from "../../../hooks/useListPosts"
 import { useSearchPost } from "../../../hooks/useSearchPost"
@@ -54,7 +55,7 @@ export default Timeline
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: "#fafafa",
+        backgroundColor: Colors.white,
         alignItems: "flex-start",
         justifyContent: "flex-start",
         paddingHorizontal: 24,

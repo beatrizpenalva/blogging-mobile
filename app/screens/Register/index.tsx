@@ -12,7 +12,7 @@ import { FormDropdown } from "../../../components/Form/FormDropdown"
 import { FormTextField } from "../../../components/Form/FormTextField"
 import { PageLayout } from "../../../templates/PageLayout"
 import { useRegister } from "../../../hooks/useRegister"
-import { UserProfile, UserProfileLabels } from "../../../model/enums"
+import { Colors, UserProfile, UserProfileLabels } from "../../../model/enums"
 
 import { RegisterFormFields, RegisterFormValues, RegisterSchema } from "./RegisterSchema"
 
@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
     },
     container: {
         flex: 1,
-        backgroundColor: "#fafafa",
+        backgroundColor: Colors.white,
         paddingHorizontal: 24,
         paddingVertical: 32,
         gap: 32

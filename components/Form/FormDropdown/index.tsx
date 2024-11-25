@@ -1,7 +1,8 @@
 import { StyleSheet, Text, View } from "react-native"
 import RNPickerSelect from "react-native-picker-select"
-
 import { useController } from "react-hook-form"
+
+import { Colors } from "../../../model/enums"
 
 type DropdownOption = {
     label: string
@@ -43,13 +44,13 @@ export const FormDropdown = ({ fieldName, label: inputLabel, options }: FormDrop
 const styles = StyleSheet.create({
     input: {
         height: 48,
-        borderColor: "#276cb1",
+        borderColor: Colors.primary,
         borderWidth: 1,
         borderRadius: 4,
         paddingHorizontal: 8,
     },
     inputLabel: {
-        color: "#276cb1",
+        color: Colors.primary,
         fontWeight: "bold",
     },
     inputWrapper: {
@@ -58,7 +59,7 @@ const styles = StyleSheet.create({
         gap: 8,
     },
     error: {
-        color: "#ab1616",
+        color: Colors.negative,
         fontSize: 12,
         fontWeight: 500,
     },

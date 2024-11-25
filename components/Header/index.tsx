@@ -1,6 +1,7 @@
 import { Alert, StyleSheet, Text, View } from "react-native"
 
 import { Button } from "../../components/Button"
+import { Colors } from "../../model/enums"
 
 type HeaderProps = {
     user?: string
@@ -20,7 +21,7 @@ export const Header = ({ user }: HeaderProps) => {
 
 const styles = StyleSheet.create({
     header: {
-        backgroundColor: "#276cb1",
+        backgroundColor: Colors.primary,
         display: "flex",
         flexDirection: "row",
         alignItems: "center",
@@ -29,7 +30,7 @@ const styles = StyleSheet.create({
         width: "100%"
     },
     title: {
-        color: "#fafafa",
+        color: Colors.white,
         fontWeight: 700,
         fontSize: 24
     }

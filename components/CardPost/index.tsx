@@ -1,8 +1,9 @@
 import type { PostResponse } from "../../api"
 
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native"
-
 import Ionicons from "react-native-vector-icons/Ionicons"
+
+import { Colors } from "../../model/enums"
 
 type CardPostProps = {
     post: PostResponse
@@ -21,7 +22,7 @@ export const CardPost = ({ post }: CardPostProps) => {
             <Text style={styles.content}>{content}</Text>
             <TouchableOpacity onPress={handleSeePostDetails}>
                 <Text style={styles.button}>
-                    Ler mais <Ionicons name="arrow-forward" color="#276cb1" size={12} />
+                    Ler mais <Ionicons name="arrow-forward" color={Colors.primary} size={12} />
                 </Text>
             </TouchableOpacity>
         </View>
@@ -30,11 +31,11 @@ export const CardPost = ({ post }: CardPostProps) => {
 
 const styles = StyleSheet.create({
     button: {
-        color: "#276cb1",
+        color: Colors.primary,
         fontWeight: "bold"
     },
     container: {
-        backgroundColor: "#F8F8F8",
+        backgroundColor: Colors.white,
         display: "flex",
         flexDirection: "column",
         alignItems: "flex-start",
@@ -44,7 +45,7 @@ const styles = StyleSheet.create({
         borderRadius: 8,
         borderStyle: "solid",
         borderWidth: 0.05,
-        borderColor: "#B0B0B0",
+        borderColor: Colors.lightGray,
         gap: 12
     },
     content: {

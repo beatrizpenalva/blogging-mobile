@@ -9,6 +9,7 @@ import { FormTextField } from "../../../components/Form/FormTextField"
 import { PageLayout } from "../../../templates/PageLayout"
 import { LoginFormFields, LoginFormValues, LoginSchema } from "./LoginSchema"
 import { useLogin } from "../../../hooks/useLogin"
+import { Colors } from "../../../model/enums"
 
 const FORM_DEFAULT_VALUES = {
     username: "",
@@ -55,7 +56,7 @@ export default Login
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: "#fafafa",
+        backgroundColor: Colors.white,
         paddingHorizontal: 24,
         paddingVertical: 32,
         gap: 32

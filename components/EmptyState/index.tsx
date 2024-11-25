@@ -2,6 +2,8 @@ import { StyleSheet, Text, View } from "react-native"
 
 import Ionicons from "react-native-vector-icons/Ionicons"
 
+import { Colors } from "../../model/enums"
+
 type EmptyStateProps = {
     description: string
     title?: string
@@ -10,7 +12,7 @@ type EmptyStateProps = {
 export const EmptyState = ({ description, title }: EmptyStateProps) => {
     return (
         <View style={styles.container}>
-            <Ionicons name="search" color="#587796" size={32} />
+            <Ionicons name="search" color={Colors.secondary} size={32} />
             <Text style={styles.title}>{title || "Nenhuma publicação para exibir"}</Text>
             <Text style={styles.description}>{description}</Text>
         </View>

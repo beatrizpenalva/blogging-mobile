@@ -11,6 +11,7 @@ import { Form } from "../../../components/Form"
 import { FormTextField } from "../../../components/Form/FormTextField"
 import { PageLayout } from "../../../templates/PageLayout"
 import { useCreatePost } from "../../../hooks/useCreatePost"
+import { Colors } from "../../../model/enums"
 
 import { PostFormFields, PostFormValues, PostSchema } from "./PostSchema"
 
@@ -68,7 +69,7 @@ const styles = StyleSheet.create({
     },
     container: {
         flex: 1,
-        backgroundColor: "#fafafa",
+        backgroundColor: Colors.white,
         paddingHorizontal: 24,
         paddingVertical: 32,
         gap: 32

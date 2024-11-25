@@ -1,6 +1,8 @@
 import { useEffect } from "react"
 import { View, StyleSheet, Animated } from "react-native"
 
+import { Colors } from "../../model/enums"
+
 type SkeletonProps = {
     height?: number
     styles?: Record<string, string | number>
@@ -35,12 +37,12 @@ export const Skeleton = ({ height, styles: customStyle, width }: SkeletonProps) 
 const styles = StyleSheet.create({
     skeleton: {
         flex: 1,
-        backgroundColor: "#cfcfcf",
+        backgroundColor: Colors.gray,
         borderRadius: 4,
     },
     skeletonContainer: {
         width: "100%",
-        backgroundColor: "#e0e0e0",
+        backgroundColor: Colors.lightGray,
         borderRadius: 4,
         overflow: "hidden",
     },

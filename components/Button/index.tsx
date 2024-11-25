@@ -1,5 +1,7 @@
 import { Pressable, StyleSheet, Text, type PressableProps } from "react-native"
 
+import { Colors } from "../../model/enums"
+
 enum VariantButtonClassNames {
     primary = "btn-primary",
     secondary = "btn-secondary",
@@ -60,31 +62,31 @@ const styles = StyleSheet.create({
         height: 48
     },
     "btn-danger": {
-        backgroundColor: "#ab1616",
+        backgroundColor: Colors.negative,
     },
     "btn-danger-label": {
-        color: "#fafafa",
+        color: Colors.white,
     },
     "btn-fullWidht": {
         width: "100%"
     },
     "btn-loading": {
-        backgroundColor: "#587796"
+        backgroundColor: Colors.secondary,
     },
     "btn-primary": {
-        backgroundColor: "#276cb1",
+        backgroundColor: Colors.primary,
     },
     "btn-primary-label": {
-        color: "#fafafa",
+        color: Colors.white,
     },
     "btn-secondary": {
-        backgroundColor: "#fafafa",
-        borderColor: "#276cb1",
+        backgroundColor: Colors.white,
+        borderColor: Colors.primary,
         borderStyle: "solid",
         borderWidth: 1,
     },
     "btn-secondary-label": {
-        color: "#276cb1",
+        color: Colors.primary,
     },
     label: {
         fontSize: 14,

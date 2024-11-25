@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react"
 import { Snackbar as RNPSnackbar } from "react-native-paper"
 
+import { Colors } from "../../model/enums"
+
 export type SnackbarProps = {
     message: string
     show: boolean
@@ -10,7 +12,7 @@ export type SnackbarProps = {
 export const Snackbar = ({ message, show = false, variant = "success" }: SnackbarProps) => {
     const [visible, setVisible] = useState(show)
 
-    const color = variant === "success" ? "#69A54C" : "#ab1616"
+    const color = variant === "success" ? Colors.positive : Colors.negative
 
     const hideSnackbar = () => setVisible(false)
 

@@ -9,6 +9,7 @@ import Register from "../screens/Register"
 import Timeline from "../screens/Timeline"
 import { PermissionProvider } from "../../context/permission"
 import { SnackbarProvider } from "../../context/snackbar";
+import { Colors } from "../../model/enums"
 
 const Tab = createBottomTabNavigator()
 
@@ -19,8 +20,8 @@ const AppRoutes = () => {
                 <Tab.Navigator
                     screenOptions={{
                         tabBarStyle: styles.tabBar,
-                        tabBarActiveTintColor: "#fafafa",
-                        tabBarInactiveTintColor: "#B0B0B0",
+                        tabBarActiveTintColor: Colors.white,
+                        tabBarInactiveTintColor: Colors.gray,
                     }}
                 >
                     <Tab.Screen
@@ -32,7 +33,7 @@ const AppRoutes = () => {
                                 <Ionicons name="home" color={color} size={size} />
                             ),
                             title: "Linha do tempo",
-                            headerStyle: { backgroundColor: "#276cb1" }
+                            headerStyle: { backgroundColor: Colors.primary }
                         }}
                     />
                     <Tab.Screen
@@ -44,7 +45,7 @@ const AppRoutes = () => {
                                 <Ionicons name="create" color={color} size={size} />
                             ),
                             title: "Nova publicação",
-                            headerStyle: { backgroundColor: "#276cb1" }
+                            headerStyle: { backgroundColor: Colors.primary }
                         }}
                     />
                     <Tab.Screen
@@ -56,7 +57,7 @@ const AppRoutes = () => {
                                 <Ionicons name="person" color={color} size={size} />
                             ),
                             title: "Novo usuário",
-                            headerStyle: { backgroundColor: "#276cb1" }
+                            headerStyle: { backgroundColor: Colors.primary }
                         }}
                     />
                     <Tab.Screen
@@ -69,7 +70,7 @@ const AppRoutes = () => {
                             ),
                             tabBarStyle: { display: "none" },
                             title: "Login",
-                            headerStyle: { backgroundColor: "#276cb1" }
+                            headerStyle: { backgroundColor: Colors.primary }
                         }}
                     />
                 </Tab.Navigator>
@@ -82,7 +83,7 @@ export default AppRoutes
 
 const styles = StyleSheet.create({
     tabBar: {
-        backgroundColor: "#276cb1",
+        backgroundColor: Colors.primary,
         height: 60,
     }
 })
