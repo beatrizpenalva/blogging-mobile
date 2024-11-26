@@ -1,13 +1,3 @@
-export enum UserProfile {
-    admin = "admin",
-    viewer = "viewer"
-}
-
-export const UserProfileLabels = {
-    [UserProfile.admin]: "Administrativo",
-    [UserProfile.viewer]: "Discente",
-}
-
 export enum ColorsOptions {
     primary = "primary",
     secondary = "secondary",

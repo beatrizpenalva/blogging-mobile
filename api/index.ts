@@ -1,5 +1,5 @@
 import { api } from "./config"
-import { UserProfile } from "../model/enums"
+import { UserProfile } from "../model/UserProfile"
 
 type ApiResponse<T> = {
     data: T
