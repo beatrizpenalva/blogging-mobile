@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 import { View, StyleSheet, Animated } from "react-native"
 
-import { Colors } from "../../model/enums"
+import { Colors } from "../../model/Colors"
 
 type SkeletonProps = {
     height?: number

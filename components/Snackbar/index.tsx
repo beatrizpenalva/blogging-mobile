@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { Snackbar as RNPSnackbar } from "react-native-paper"
 
-import { Colors } from "../../model/enums"
+import { Colors } from "../../model/Colors"
 
 export type SnackbarProps = {
     message: string

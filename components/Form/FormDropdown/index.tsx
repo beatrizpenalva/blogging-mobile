@@ -2,7 +2,7 @@ import { StyleSheet, Text, View } from "react-native"
 import RNPickerSelect from "react-native-picker-select"
 import { useController } from "react-hook-form"
 
-import { Colors } from "../../../model/enums"
+import { Colors } from "../../../model/Colors"
 
 type DropdownOption = {
     label: string

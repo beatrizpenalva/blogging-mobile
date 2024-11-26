@@ -9,7 +9,7 @@ import Register from "../screens/Register"
 import Timeline from "../screens/Timeline"
 import { PermissionProvider } from "../../context/permission"
 import { SnackbarProvider } from "../../context/snackbar";
-import { Colors } from "../../model/enums"
+import { Colors } from "../../model/Colors"
 
 const Tab = createBottomTabNavigator()
 
@@ -25,7 +25,7 @@ const AppRoutes = () => {
                     }}
                 >
                     <Tab.Screen
-                        name="screens/Timeline/index"
+                        name={Navigation.timeline}
                         component={Timeline}
                         options={{
                             tabBarLabel: "Início",
@@ -37,7 +37,7 @@ const AppRoutes = () => {
                         }}
                     />
                     <Tab.Screen
-                        name="screens/CreatePost/index"
+                        name={Navigation.createPost}
                         component={CreatePost}
                         options={{
                             tabBarLabel: "Postar",
@@ -49,7 +49,7 @@ const AppRoutes = () => {
                         }}
                     />
                     <Tab.Screen
-                        name="screens/Register/index"
+                        name={Navigation.register}
                         component={Register}
                         options={{
                             tabBarLabel: "Cadastro",
@@ -61,7 +61,7 @@ const AppRoutes = () => {
                         }}
                     />
                     <Tab.Screen
-                        name="screens/Login/index"
+                        name={Navigation.login}
                         component={Login}
                         options={{
                             tabBarLabel: "Sair",

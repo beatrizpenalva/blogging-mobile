@@ -9,7 +9,7 @@ import { FormTextField } from "../../../components/Form/FormTextField"
 import { PageLayout } from "../../../templates/PageLayout"
 import { LoginFormFields, LoginFormValues, LoginSchema } from "./LoginSchema"
 import { useLogin } from "../../../hooks/useLogin"
-import { Colors } from "../../../model/enums"
+import { Colors } from "../../../model/Colors"
 
 const FORM_DEFAULT_VALUES = {
     username: "",

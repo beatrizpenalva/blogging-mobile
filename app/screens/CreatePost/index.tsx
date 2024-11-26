@@ -11,7 +11,7 @@ import { Form } from "../../../components/Form"
 import { FormTextField } from "../../../components/Form/FormTextField"
 import { PageLayout } from "../../../templates/PageLayout"
 import { useCreatePost } from "../../../hooks/useCreatePost"
-import { Colors } from "../../../model/enums"
+import { Colors } from "../../../model/Colors"
 
 import { PostFormFields, PostFormValues, PostSchema } from "./PostSchema"
 

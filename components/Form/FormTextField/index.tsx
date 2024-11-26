@@ -2,7 +2,7 @@ import { StyleSheet, Text, TextInput, View, type InputModeOptions } from "react-
 
 import { useController } from "react-hook-form"
 
-import { Colors } from "../../../model/enums"
+import { Colors } from "../../../model/Colors"
 
 type FormTextFieldProps = {
     fieldName: string

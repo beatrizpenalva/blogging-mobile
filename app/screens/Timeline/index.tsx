@@ -7,7 +7,7 @@ import { FormSearch } from "../../../components/Form/FormSearch"
 import { SearchFormValues } from "../../../components/Form/FormSearch/SearchSchema"
 import { TimelineContent } from "../../../components/TimelineContent"
 import { PageLayout } from "../../../templates/PageLayout"
-import { Colors } from "../../../model/enums"
+import { Colors } from "../../../model/Colors"
 
 import { useListPosts } from "../../../hooks/useListPosts"
 import { useSearchPost } from "../../../hooks/useSearchPost"

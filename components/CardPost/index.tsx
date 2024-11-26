@@ -3,7 +3,7 @@ import type { PostResponse } from "../../api"
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native"
 import Ionicons from "react-native-vector-icons/Ionicons"
 
-import { Colors } from "../../model/enums"
+import { Colors } from "../../model/Colors"
 
 type CardPostProps = {
     post: PostResponse

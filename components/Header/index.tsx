@@ -1,7 +1,7 @@
 import { Alert, StyleSheet, Text, View } from "react-native"
 
 import { Button } from "../../components/Button"
-import { Colors } from "../../model/enums"
+import { Colors } from "../../model/Colors"
 
 type HeaderProps = {
     user?: string

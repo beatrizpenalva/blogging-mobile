@@ -2,7 +2,7 @@ import { StyleSheet, Text, View } from "react-native"
 
 import Ionicons from "react-native-vector-icons/Ionicons"
 
-import { Colors } from "../../model/enums"
+import { Colors } from "../../model/Colors"
 
 type EmptyStateProps = {
     description: string

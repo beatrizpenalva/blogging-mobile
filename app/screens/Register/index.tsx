@@ -12,7 +12,7 @@ import { FormDropdown } from "../../../components/Form/FormDropdown"
 import { FormTextField } from "../../../components/Form/FormTextField"
 import { PageLayout } from "../../../templates/PageLayout"
 import { useRegister } from "../../../hooks/useRegister"
-import { Colors } from "../../../model/enums"
+import { Colors } from "../../../model/Colors"
 import { UserProfile, UserProfileLabels } from "../../../model/UserProfile"
 
 import { RegisterFormFields, RegisterFormValues, RegisterSchema } from "./RegisterSchema"

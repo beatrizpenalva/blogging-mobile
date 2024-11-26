@@ -1,6 +1,6 @@
 import { Pressable, StyleSheet, Text, type PressableProps } from "react-native"
 
-import { Colors } from "../../model/enums"
+import { Colors } from "../../model/Colors"
 
 enum VariantButtonClassNames {
     primary = "btn-primary",
