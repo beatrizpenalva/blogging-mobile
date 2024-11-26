@@ -1,6 +1,20 @@
 import { StackNavigationProp } from "@react-navigation/stack"
 
-export type RootStackParamList = {
+enum Screens {
+    CreatePost = "CreatePost",
+    Login = "Login",
+    Register = "Register",
+    Timeline = "Timeline",
+}
+
+export const ScreensPath = {
+    [Screens.CreatePost]: "screens/CreatePost/index",
+    [Screens.Login]: "screens/Login/index",
+    [Screens.Register]: "screens/Register/index",
+    [Screens.Timeline]: "screens/Timeline/index",
+}
+
+type RootStackParamList = {
     "app/screens/CreatePost/index": undefined
     "app/screens/Login/index": undefined
     "app/screens/Register/index": undefined

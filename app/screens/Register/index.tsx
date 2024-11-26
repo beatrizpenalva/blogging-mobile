@@ -1,4 +1,4 @@
-import type { TimelineScreenNavigationProp } from "../../routes/types"
+import type { TimelineScreenNavigationProp } from "../../../model/Routes"
 
 import { StyleSheet, View } from "react-native"
 

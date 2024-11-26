@@ -10,6 +10,7 @@ import Timeline from "../screens/Timeline"
 import { PermissionProvider } from "../../context/permission"
 import { SnackbarProvider } from "../../context/snackbar";
 import { Colors } from "../../model/Colors"
+import { ScreensPath } from "../../model/Routes"
 
 const Tab = createBottomTabNavigator()
 
@@ -25,7 +26,7 @@ const AppRoutes = () => {
                     }}
                 >
                     <Tab.Screen
-                        name={Navigation.timeline}
+                        name={ScreensPath.Timeline}
                         component={Timeline}
                         options={{
                             tabBarLabel: "Início",
@@ -37,7 +38,7 @@ const AppRoutes = () => {
                         }}
                     />
                     <Tab.Screen
-                        name={Navigation.createPost}
+                        name={ScreensPath.CreatePost}
                         component={CreatePost}
                         options={{
                             tabBarLabel: "Postar",
@@ -49,7 +50,7 @@ const AppRoutes = () => {
                         }}
                     />
                     <Tab.Screen
-                        name={Navigation.register}
+                        name={ScreensPath.Register}
                         component={Register}
                         options={{
                             tabBarLabel: "Cadastro",
@@ -61,7 +62,7 @@ const AppRoutes = () => {
                         }}
                     />
                     <Tab.Screen
-                        name={Navigation.login}
+                        name={ScreensPath.Login}
                         component={Login}
                         options={{
                             tabBarLabel: "Sair",

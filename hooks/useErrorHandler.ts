@@ -1,5 +1,5 @@
 import type { ApiResponseDataUnknown } from "../api"
-import type { LoginScreenNavigationProp } from "../app/routes/types"
+import type { LoginScreenNavigationProp } from "../model/Routes"
 
 import { useNavigation } from "@react-navigation/native"
 
