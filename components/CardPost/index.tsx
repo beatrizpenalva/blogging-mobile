@@ -1,6 +1,8 @@
 import type { PostResponse } from "../../api"
+import type { PostDetailsScreenNavigationProp } from "../../model/Routes"
 
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native"
+import { useNavigation } from "@react-navigation/native"
 import Ionicons from "react-native-vector-icons/Ionicons"
 
 import { Colors } from "../../model/Colors"
@@ -10,10 +12,12 @@ type CardPostProps = {
 }
 
 export const CardPost = ({ post }: CardPostProps) => {
+    const { navigate } = useNavigation<PostDetailsScreenNavigationProp>()
+
     const { content, id, title } = post
 
     const handleSeePostDetails = () => {
-        console.log(`Ver detalhe da postagem ${id}`)
+        navigate("app/screens/PostDetails/index", { id })
     }
 
     return (

@@ -5,14 +5,15 @@ import Ionicons from "react-native-vector-icons/Ionicons"
 
 import CreatePost from "../screens/CreatePost"
 import Login from "../screens/Login"
+import PostDetails from "../screens/PostDetails"
 import Register from "../screens/Register"
 import Timeline from "../screens/Timeline"
 import { PermissionProvider } from "../../context/permission"
 import { SnackbarProvider } from "../../context/snackbar";
 import { Colors } from "../../model/Colors"
-import { ScreensPath } from "../../model/Routes"
+import { RootStackParamList } from "../../model/Routes"
 
-const Tab = createBottomTabNavigator()
+const Tab = createBottomTabNavigator<RootStackParamList>()
 
 const AppRoutes = () => {
     return (
@@ -26,7 +27,7 @@ const AppRoutes = () => {
                     }}
                 >
                     <Tab.Screen
-                        name={ScreensPath.Timeline}
+                        name="app/screens/Timeline/index"
                         component={Timeline}
                         options={{
                             tabBarLabel: "Início",
@@ -38,7 +39,7 @@ const AppRoutes = () => {
                         }}
                     />
                     <Tab.Screen
-                        name={ScreensPath.CreatePost}
+                        name="app/screens/CreatePost/index"
                         component={CreatePost}
                         options={{
                             tabBarLabel: "Postar",
@@ -50,7 +51,7 @@ const AppRoutes = () => {
                         }}
                     />
                     <Tab.Screen
-                        name={ScreensPath.Register}
+                        name="app/screens/Register/index"
                         component={Register}
                         options={{
                             tabBarLabel: "Cadastro",
@@ -62,7 +63,7 @@ const AppRoutes = () => {
                         }}
                     />
                     <Tab.Screen
-                        name={ScreensPath.Login}
+                        name="app/screens/Login/index"
                         component={Login}
                         options={{
                             tabBarLabel: "Sair",
@@ -71,6 +72,15 @@ const AppRoutes = () => {
                             ),
                             tabBarStyle: { display: "none" },
                             title: "Login",
+                            headerStyle: { backgroundColor: Colors.primary }
+                        }}
+                    />
+                    <Tab.Screen
+                        name="app/screens/PostDetails/index"
+                        component={PostDetails}
+                        options={{
+                            tabBarItemStyle: { display: "none" },
+                            title: "Detalhes",
                             headerStyle: { backgroundColor: Colors.primary }
                         }}
                     />
