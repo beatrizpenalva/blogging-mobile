@@ -4,6 +4,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
 import Ionicons from "react-native-vector-icons/Ionicons"
 
 import CreatePost from "../screens/CreatePost"
+import EditPost from "../screens/EditPost"
 import Login from "../screens/Login"
 import PostDetails from "../screens/PostDetails"
 import Register from "../screens/Register"
@@ -72,6 +73,15 @@ const AppRoutes = () => {
                             ),
                             tabBarStyle: { display: "none" },
                             title: "Login",
+                            headerStyle: { backgroundColor: Colors.primary }
+                        }}
+                    />
+                    <Tab.Screen
+                        name="app/screens/EditPost/index"
+                        component={EditPost}
+                        options={{
+                            tabBarItemStyle: { display: "none" },
+                            title: "Edição",
                             headerStyle: { backgroundColor: Colors.primary }
                         }}
                     />
