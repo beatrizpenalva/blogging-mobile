@@ -12,9 +12,10 @@ type FormTextFieldProps = {
     multiline?: boolean
     placeholder?: string
     srLabel?: string
+    style?: object
 }
 
-export const FormTextField = ({ fieldName, hideValue = false, inputMode = "text", label, multiline = false, placeholder = "", srLabel }: FormTextFieldProps) => {
+export const FormTextField = ({ fieldName, hideValue = false, inputMode = "text", label, multiline = false, placeholder = "", srLabel, style }: FormTextFieldProps) => {
     const {
         field: { onChange, value },
         fieldState: { error }
@@ -31,7 +32,7 @@ export const FormTextField = ({ fieldName, hideValue = false, inputMode = "text"
                 onChangeText={onChange}
                 placeholder={placeholder}
                 secureTextEntry={hideValue}
-                style={styles.input}
+                style={[styles.input, style]}
                 value={value}
                 accessibilityLabel={srLabel}
             />

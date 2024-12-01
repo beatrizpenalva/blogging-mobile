@@ -46,7 +46,6 @@ const CreatePost = () => {
                     />
                     <FormTextField
                         fieldName={PostFormFields.content}
-                        hideValue
                         label="Conteúdo"
                         multiline
                         placeholder="Escreva o que deseja publicar"
