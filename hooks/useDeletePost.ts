@@ -33,9 +33,9 @@ export const useDeletePost = ({ id, onToggleModal }: UseDeleteParams) => {
 
             navigate("app/screens/Timeline/index")
         } catch (e: unknown) {
+            onToggleModal()
             errorHandler(e, "Não foi possível excluir a publicação. Por favor, tente novamente mais tarde.")
         } finally {
-            onToggleModal()
             setLoading(false)
         }
     }

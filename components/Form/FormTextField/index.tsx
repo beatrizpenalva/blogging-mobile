@@ -8,7 +8,7 @@ type FormTextFieldProps = {
     fieldName: string
     inputMode?: InputModeOptions
     hideValue?: boolean
-    label: string
+    label?: string
     multiline?: boolean
     placeholder?: string
     srLabel?: string
@@ -25,7 +25,7 @@ export const FormTextField = ({ fieldName, hideValue = false, inputMode = "text"
 
     return (
         <View style={styles.inputWrapper}>
-            <Text style={styles.inputLabel}>{label}</Text>
+            {Boolean(label) ? <Text style={styles.inputLabel}>{label}</Text> : null}
             <TextInput
                 inputMode={inputMode}
                 multiline={multiline}

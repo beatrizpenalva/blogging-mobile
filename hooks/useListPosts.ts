@@ -4,11 +4,11 @@ import { useState } from "react"
 
 import { getPosts } from "../api"
 
-type RequestStatus = "idle" | "error" | "loading" | "success"
+type RequestStatus = "error" | "loading" | "success"
 
 export const useListPosts = () => {
     const [postsList, setPostsList] = useState<Array<PostResponse>>([])
-    const [requestStatus, setRequestStatus] = useState<RequestStatus>("idle")
+    const [requestStatus, setRequestStatus] = useState<RequestStatus>("loading")
 
     const getListPosts = async () => {
         setRequestStatus("loading")

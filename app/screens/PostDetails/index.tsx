@@ -10,10 +10,10 @@ import { DeleteConfirmationModal } from "../../../components/DeleteConfirmationM
 import { ErrorState } from "../../../components/ErrorState"
 import { PageLayout } from "../../../templates/PageLayout"
 import { Skeleton } from "../../../components/Skeleton"
-
 import { usePermission } from "../../../hooks/usePermission"
 import { usePostDetails } from "../../../hooks/usePostDetails"
 import { dateHandler } from "../../../utils/dateHandler"
+import { Colors } from "../../../model/Colors"
 import { RootStackParamList } from "../../../model/Routes"
 
 type PostDetailsProps = {
@@ -30,7 +30,7 @@ const PostDetails: React.FC<PostDetailsProps> = ({ route }) => {
 
     const isLoading = requestStatus === "loading"
 
-    const lastEditionDate = dateHandler(post?.updatedAt ?? post?.createdAt)
+    const lastEditionDate = dateHandler(post?.updatedAt ?? post?.createdAt).format('DD/MM/YYYY')
     const publishDate = dateHandler(post?.createdAt).format('DD/MM/YYYY')
 
     const handleEditPostDetails = () => {
@@ -51,14 +51,16 @@ const PostDetails: React.FC<PostDetailsProps> = ({ route }) => {
         <PageLayout>
             <DeleteConfirmationModal id={id} onClose={() => setOpenDeleteModal(false)} open={openDeleteModal} />
             <View style={styles.container}>
-                <ScrollView>
-                    {isLoading ? <Skeleton height={16} width={320} /> : <Text style={styles.title}>{post?.title}</Text>}
-                    <View style={styles.detailsContainer}>
-                        {isLoading ? <Skeleton height={8} width={144} /> : <Text style={styles.details}>{`Data da publicação: ${publishDate}`}</Text>}
-                        {isLoading ? <Skeleton height={8} width={144} /> : <Text style={styles.details}>{`Última edição: ${lastEditionDate}`}</Text>}
-                    </View>
-                    {isLoading ? <Skeleton height={160} width={320} /> : <Text style={styles.content}>{post?.content}</Text>}
-                </ScrollView>
+                <View style={styles.contentContainer}>
+                    <ScrollView>
+                        {isLoading ? <Skeleton height={16} width={320} /> : <Text style={styles.title}>{post?.title}</Text>}
+                        <View style={styles.detailsContainer}>
+                            {isLoading ? <Skeleton height={8} width={144} /> : <Text style={styles.details}>{`Data da publicação: ${publishDate}`}</Text>}
+                            {isLoading ? <Skeleton height={8} width={144} /> : <Text style={styles.details}>{`Última edição: ${lastEditionDate}`}</Text>}
+                        </View>
+                        {isLoading ? <Skeleton height={160} width={320} /> : <Text style={styles.content}>{post?.content}</Text>}
+                    </ScrollView>
+                </View>
                 {hasPermission && (
                     <View style={styles.actionsContainer}>
                         {isLoading ? <Skeleton height={48} width={48} /> : <Button label="Excluir" onPress={() => setOpenDeleteModal(true)} variant="danger" />}
@@ -93,15 +95,21 @@ const styles = StyleSheet.create({
         fontSize: 16,
         fontWeight: 400,
     },
+    contentContainer: {
+        width: "100%"
+    },
     details: {
         fontSize: 12,
     },
     detailsContainer: {
-        marginTop: 12,
         marginBottom: 24,
         display: "flex",
         flexDirection: "column",
-        gap: 4,
+        gap: 8,
+        borderBottomColor: Colors.lightGray,
+        borderBottomWidth: 0.5,
+        width: "100%",
+        paddingVertical: 12,
     },
     title: {
         fontSize: 14,

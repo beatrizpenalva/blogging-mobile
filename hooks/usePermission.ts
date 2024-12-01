@@ -9,8 +9,7 @@ export const usePermission = () => {
     const hasPermission = Boolean(token)
 
     const handleSetToken = (newToken: string) => {
-        if (Boolean(newToken)) setPermission({ ...permission, token: `Bearer ${newToken}` })
-        setPermission({ ...permission, token: newToken })
+        setPermission({ ...permission, token: `Bearer ${newToken}` })
     }
 
     return {

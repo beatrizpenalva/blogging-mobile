@@ -22,7 +22,11 @@ const Timeline = () => {
     const isLoading = requestStatus === "loading" || loading
 
     const handleSearch = async (data: SearchFormValues) => {
-        await searchPost(data.word)
+        if (Boolean(data.word)) {
+            await searchPost(data.word!)
+        } else {
+            await getListPosts()
+        }
     }
 
     useEffect(() => {
@@ -44,7 +48,9 @@ const Timeline = () => {
                 <View style={styles.searchContainer}>
                     <FormSearch onSearch={handleSearch} />
                 </View>
-                <TimelineContent error={hasError} loading={isLoading} onTryAgain={() => void getListPosts()} posts={currentList} />
+                <View style={styles.timelineContainer}>
+                    <TimelineContent error={hasError} loading={isLoading} onTryAgain={() => void getListPosts()} posts={currentList} />
+                </View>
             </View>
         </PageLayout>
     )
@@ -66,5 +72,8 @@ const styles = StyleSheet.create({
         alignItems: "flex-start",
         justifyContent: "flex-start",
         marginBottom: 24,
-    }
+    },
+    timelineContainer: {
+        width: "100%",
+    },
 })

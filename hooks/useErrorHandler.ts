@@ -22,7 +22,7 @@ export const useErrorHandler = () => {
                 variant: "error"
             })
 
-            navigate("app/screens/Timeline/index")
+            navigate("app/screens/Login/index")
         } else {
             setSnackbar({
                 message,

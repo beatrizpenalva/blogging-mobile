@@ -5,8 +5,7 @@ import { getFormFields } from "../../../utils/getFormFields"
 
 export const SearchSchema = yupObject({
     word: yupString()
-        .required("Campo obrigatório")
-}).required()
+})
 
 export type SearchFormValues = yupInferType<typeof SearchSchema>
 

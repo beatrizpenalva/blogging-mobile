@@ -29,8 +29,7 @@ export const FormSearch = ({ onSearch }: FormSearchProps) => {
         <View style={styles.container}>
             <Form methods={methods}>
                 <FormTextField
-                    fieldName={SearchFormFields.word}
-                    label="Buscar"
+                    fieldName={SearchFormFields.word ?? ""}
                     placeholder="Digite uma palavra-chave"
                 />
                 <Button label="Buscar" onPress={handleSubmit(onSearch)} />
@@ -44,7 +43,7 @@ const styles = StyleSheet.create({
         display: "flex",
         flexDirection: "row",
         gap: 8,
-        alignItems: "flex-end",
+        alignItems: "flex-start",
         width: "100%"
     },
 })
