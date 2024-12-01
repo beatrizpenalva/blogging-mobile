@@ -23,7 +23,7 @@ export const CardPost = ({ post }: CardPostProps) => {
     return (
         <View style={styles.container}>
             <Text style={styles.title}>{title}</Text>
-            <Text style={styles.content}>{content}</Text>
+            <Text numberOfLines={2} style={styles.content}>{content}</Text>
             <TouchableOpacity onPress={handleSeePostDetails}>
                 <Text style={styles.button}>
                     Ler mais <Ionicons name="arrow-forward" color={Colors.primary} size={12} />
