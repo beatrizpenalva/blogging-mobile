@@ -3,6 +3,7 @@ export enum ColorsOptions {
     secondary = "secondary",
     positive = "positive",
     negative = "negative",
+    warning = "warning",
     white = "white",
     lightGray = "lightGray",
     gray = "gray"
@@ -13,6 +14,7 @@ export const Colors = {
     [ColorsOptions.secondary]: "#587796",
     [ColorsOptions.positive]: "#69A54C",
     [ColorsOptions.negative]: "#ab1616",
+    [ColorsOptions.warning]: "#F0AC24",
     [ColorsOptions.white]: "#fafafa",
     [ColorsOptions.lightGray]: "#e0e0e0",
     [ColorsOptions.gray]: "#B0B0B0",

@@ -1,6 +1,12 @@
+import type { TimelineScreenNavigationProp } from "../../model/Routes"
+
 import { type PropsWithChildren } from "react"
 import { StyleSheet, View } from "react-native"
 
+import { useNavigation } from "@react-navigation/native"
+import { ErrorBoundary } from "react-error-boundary"
+
+import { ErrorBoundaryFallback } from "../../components/ErrorBoundaryFallback"
 import { Header } from "../../components/Header"
 import { Snackbar } from "../../components/Snackbar"
 import { useSnackbar } from "../../hooks/useSnackbar"
@@ -10,10 +16,11 @@ type PageLayoutProps = PropsWithChildren<{}>
 export const PageLayout = ({
     children,
 }: PageLayoutProps) => {
+    const { navigate } = useNavigation<TimelineScreenNavigationProp>()
     const { snackbar } = useSnackbar()
 
     return (
-        <>
+        <ErrorBoundary FallbackComponent={ErrorBoundaryFallback}>
             <Header />
             <View style={styles.container}>{children}</View>
             <Snackbar
@@ -21,7 +28,7 @@ export const PageLayout = ({
                 show={snackbar.show}
                 variant={snackbar.variant}
             />
-        </>
+        </ErrorBoundary >
     )
 }
 

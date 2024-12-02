@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
     searchContainer: {
         alignItems: "flex-start",
         justifyContent: "flex-start",
-        marginBottom: 24,
+        marginBottom: 24
     },
     timelineContainer: {
         width: "100%",

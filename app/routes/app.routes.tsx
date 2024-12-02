@@ -104,7 +104,7 @@ const AppRoutes = () => {
                     />
                 </Tab.Navigator>
             </PermissionProvider>
-        </SnackbarProvider >
+        </SnackbarProvider>
     )
 }
 
