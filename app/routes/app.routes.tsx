@@ -1,5 +1,9 @@
+import type { LoginScreenNavigationProp } from "../../model/Routes"
+
+import { useEffect } from "react"
 import { StyleSheet } from "react-native"
 
+import { useNavigation } from "@react-navigation/native"
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
 import Ionicons from "react-native-vector-icons/Ionicons"
 
@@ -17,11 +21,21 @@ import { RootStackParamList } from "../../model/Routes"
 const Tab = createBottomTabNavigator<RootStackParamList>()
 
 const AppRoutes = () => {
+    const { navigate } = useNavigation<LoginScreenNavigationProp>()
+
+    useEffect(() => {
+        navigate("app/screens/Login/index");
+    }, []);
+
     return (
         <SnackbarProvider>
             <PermissionProvider>
                 <Tab.Navigator
+                    initialRouteName="app/screens/Login/index"
                     screenOptions={{
+                        headerTitleAlign: "center",
+                        headerTintColor: Colors.white,
+                        headerStyle: { backgroundColor: Colors.primary },
                         tabBarStyle: styles.tabBar,
                         tabBarActiveTintColor: Colors.white,
                         tabBarInactiveTintColor: Colors.gray,
@@ -36,7 +50,6 @@ const AppRoutes = () => {
                                 <Ionicons name="home" color={color} size={size} />
                             ),
                             title: "Linha do tempo",
-                            headerStyle: { backgroundColor: Colors.primary }
                         }}
                     />
                     <Tab.Screen
@@ -48,7 +61,6 @@ const AppRoutes = () => {
                                 <Ionicons name="create" color={color} size={size} />
                             ),
                             title: "Nova publicação",
-                            headerStyle: { backgroundColor: Colors.primary }
                         }}
                     />
                     <Tab.Screen
@@ -60,7 +72,6 @@ const AppRoutes = () => {
                                 <Ionicons name="person" color={color} size={size} />
                             ),
                             title: "Novo usuário",
-                            headerStyle: { backgroundColor: Colors.primary }
                         }}
                     />
                     <Tab.Screen
@@ -73,7 +84,6 @@ const AppRoutes = () => {
                             ),
                             tabBarStyle: { display: "none" },
                             title: "Login",
-                            headerStyle: { backgroundColor: Colors.primary }
                         }}
                     />
                     <Tab.Screen
@@ -82,7 +92,6 @@ const AppRoutes = () => {
                         options={{
                             tabBarItemStyle: { display: "none" },
                             title: "Edição",
-                            headerStyle: { backgroundColor: Colors.primary }
                         }}
                     />
                     <Tab.Screen
@@ -91,12 +100,11 @@ const AppRoutes = () => {
                         options={{
                             tabBarItemStyle: { display: "none" },
                             title: "Detalhes",
-                            headerStyle: { backgroundColor: Colors.primary }
                         }}
                     />
                 </Tab.Navigator>
             </PermissionProvider>
-        </SnackbarProvider>
+        </SnackbarProvider >
     )
 }
 
