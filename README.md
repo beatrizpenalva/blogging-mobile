@@ -1,50 +1,73 @@
-# Welcome to your Expo app 👋
+# Blogging Mobile
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Aplicação mobile do Grupo 3 da Pós Graduação Full Stack Development - FIAP
 
-## Get started
+<div align="center">
+    <img src="https://imgur.com/7ehqu7c.png">
+</div>
 
-1. Install dependencies
+## 🚀 Tecnologias
 
-   ```bash
-   npm install
-   ```
+O projeto foi desenvolvido utilizando as seguintes tecnologias:
 
-2. Start the app
+- **[Expo](https://expo.dev)** como ferramenta de construção do projeto.
+- **[TypeScript - v5.3.3](https://www.typescriptlang.org/)** para auxiliar na tipagem e detecção de erros em tempo de execução.
+- **[React Native- v0.76.2](https://reactnative.dev/)** para desenvolver a interface gráfica.
+- **[React hook form - v7.53.0](https://react-hook-form.com/)** e **[Yup - v1.4.0](https://github.com/jquense/yup)** para manipulação de formulários e a validação de dados.
+- **[Axios - v1.7.7](https://getbootstrap.com/)** para fazer requisições HTTP.
 
-   ```bash
-    npx expo start
-   ```
+## ⚠️ Requisitos
 
-In the output, you'll find options to open the app in a
+- [Node.js](https://nodejs.org/) v18+ e [NPM](https://www.npmjs.com/) para rodar o projeto
+- [Expo CLI](https://docs.expo.dev/more/expo-cli/)
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## 💻 Como baixar e inicializar o projeto
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+1. Clonar o repositório
 
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
+```shell
+    git clone https://github.com/beatrizpenalva/blogging-mobile.git
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+2. Entrar no diretório
 
-## Learn more
+```shell
+    cd blogging-mobile
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+3. Instalar as dependências
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+```shell
+    npm install
+```
 
-## Join the community
+4. Inicializar o projeto
 
-Join our community of developers creating universal apps.
+```shell
+    npx expo start
+```
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+💡 A aplicação estará disponível em http://localhost:8081 ou instale o aplicativo do Expo Go no dispositivo [Android](https://play.google.com/store/apps/details?id=host.exp.exponent&hl=pt_BR) ou no [iOS](https://apps.apple.com/br/app/expo-go/id982107779) e leia o QR code que irá aparecer no terminal com a câmera do celular
+
+## 🗂️ Arquitetura do repositório
+
+```
+ BLOGGING-WEB/
+ ├── src/
+ │ ├── api/
+ │ ├── app/
+ │ ├──├── routes
+ │ ├──└── screens/
+ │ ├── components/
+ │ ├── context/
+ │ ├── hooks/
+ │ ├── model/
+ │ ├── templates/
+ │ ├── utils/
+ │ └── ...
+ ├── .env
+ ├── package.json
+ ├── tsconfig.json
+ └── ...
+
+```
