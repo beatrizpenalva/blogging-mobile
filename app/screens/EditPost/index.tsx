@@ -95,6 +95,18 @@ const EditPost: React.FC<EditPostProps> = ({ route }) => {
                             style={styles.inputCustomClass}
                         />
                     }
+                    {isLoading ?
+                        <View style={styles.formSkeletonContainer}>
+                            <Skeleton height={12} width={144} />
+                            <Skeleton height={96} width={320} />
+                        </View>
+                        :
+                        <FormTextField
+                            fieldName={EditPostFormFields.author}
+                            label="Autor"
+                            multiline
+                        />
+                    }
                     <View style={styles.actionsContainer}>
                         {isLoading ? <Skeleton height={48} width={48} /> : <Button label="Salvar" loading={loading} onPress={handleSubmit(editPost)} />}
                         {isLoading ? <Skeleton height={48} width={48} /> : <Button label="Cancelar" onPress={() => navigate("app/screens/Timeline/index")} variant="secondary" />}

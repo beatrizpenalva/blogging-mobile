@@ -21,7 +21,7 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias:
 - [Node.js](https://nodejs.org/) v18+ e [NPM](https://www.npmjs.com/) para rodar o projeto
 - [Expo CLI](https://docs.expo.dev/more/expo-cli/)
 
-## 💻 Como baixar e inicializar o projeto
+## 📱 Como baixar e inicializar o projeto
 
 1. Clonar o repositório
 

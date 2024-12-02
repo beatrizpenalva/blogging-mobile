@@ -29,6 +29,8 @@ export const EditPostSchema = yupObject({
                 return true
             }
         }),
+    author: yupString()
+        .required("Campo obrigatório")
 }).required()
 
 export type EditPostFormValues = yupInferType<typeof EditPostSchema>

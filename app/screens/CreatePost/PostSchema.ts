@@ -29,6 +29,8 @@ export const PostSchema = yupObject({
                 return true
             }
         }),
+    author: yupString()
+        .required("Campo obrigatório")
 }).required()
 
 export type PostFormValues = yupInferType<typeof PostSchema>

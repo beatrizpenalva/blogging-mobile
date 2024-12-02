@@ -16,10 +16,10 @@ export const useCreatePost = () => {
     const { token } = usePermission()
     const { setSnackbar } = useSnackbar()
 
-    const savePost = async ({ content, title }: PostPayload): Promise<any> => {
+    const savePost = async ({ content, title, author }: PostPayload): Promise<any> => {
         setLoading(true)
         try {
-            await postPost(token, { content, title })
+            await postPost(token, { content, title, author })
 
             setSnackbar({
                 message: "Publicação criada com sucesso.",
