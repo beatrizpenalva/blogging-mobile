@@ -1,7 +1,9 @@
 import type { PostResponse } from "../../../api"
 
-import { useEffect, useState } from "react"
+import { useCallback, useEffect, useState } from "react"
 import { StyleSheet, View } from "react-native"
+
+import { useFocusEffect } from "@react-navigation/native"
 
 import { FormSearch } from "../../../components/Form/FormSearch"
 import { SearchFormValues } from "../../../components/Form/FormSearch/SearchSchema"
@@ -37,10 +39,11 @@ const Timeline = () => {
         setCurrentList(postsList)
     }, [postsList])
 
-    useEffect(() => {
-        void getListPosts()
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
+    useFocusEffect(
+        useCallback(() => {
+            void getListPosts()
+        }, [])
+    )
 
     return (
         <PageLayout>
