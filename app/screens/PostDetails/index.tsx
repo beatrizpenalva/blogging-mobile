@@ -1,9 +1,10 @@
 import type { RouteProp } from "@react-navigation/native"
 import type { EditPostScreenNavigationProp } from "../../../model/Routes"
 
-import { useEffect, useState } from "react"
+import { useCallback, useState } from "react"
 import { ScrollView, StyleSheet, Text, View } from "react-native"
-import { useNavigation } from "@react-navigation/native"
+
+import { useFocusEffect, useNavigation } from "@react-navigation/native"
 
 import { Button } from "../../../components/Button"
 import { DeleteConfirmationModal } from "../../../components/DeleteConfirmationModal"
@@ -37,9 +38,11 @@ const PostDetails: React.FC<PostDetailsProps> = ({ route }) => {
         navigate("app/screens/EditPost/index", { id })
     }
 
-    useEffect(() => {
-        void getPostDetails()
-    }, [id])
+    useFocusEffect(
+        useCallback(() => {
+            void getPostDetails()
+        }, [id])
+    )
 
     if (requestStatus === "error") {
         return (
