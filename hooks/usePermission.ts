@@ -1,20 +1,21 @@
 import { useContext } from "react"
 
-import { PermissionContext } from "../context/permission"
+import { PermissionContext, type PermissionContextState } from "../context/permission"
 
 export const usePermission = () => {
     const { permission, setPermission } = useContext(PermissionContext)
 
-    const { token } = permission
+    const { token, user } = permission
     const hasPermission = Boolean(token)
 
-    const handleSetToken = (newToken: string) => {
-        setPermission({ ...permission, token: `Bearer ${newToken}` })
+    const handleSetUserInfo = ({ token = "", user = "" }: PermissionContextState) => {
+        setPermission({ ...permission, token: `Bearer ${token}`, user })
     }
 
     return {
         hasPermission,
-        setToken: handleSetToken,
-        token
+        setUserInfo: handleSetUserInfo,
+        token,
+        user
     }
 }

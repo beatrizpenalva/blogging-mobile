@@ -1,4 +1,3 @@
-import type { PostPayload } from "../api"
 import type { TimelineScreenNavigationProp } from "../model/Routes"
 
 import { useState } from "react"
@@ -9,18 +8,20 @@ import { useErrorHandler } from "./useErrorHandler"
 import { usePermission } from "./usePermission"
 import { useSnackbar } from "./useSnackbar"
 
+import { EditPostFormValues } from "../app/screens/EditPost/EditPostSchema"
+
 export const useEditPost = (id: string | number) => {
     const [loading, setLoading] = useState(false)
 
     const { errorHandler } = useErrorHandler()
     const { navigate } = useNavigation<TimelineScreenNavigationProp>()
-    const { token } = usePermission()
+    const { token, user } = usePermission()
     const { setSnackbar } = useSnackbar()
 
-    const editPost = async (data: PostPayload) => {
+    const editPost = async (data: EditPostFormValues) => {
         setLoading(true)
         try {
-            await putPost(id, token, data)
+            await putPost(id, token, { ...data, author: user })
 
             setSnackbar({
                 message: "Publicação alterada com sucesso.",

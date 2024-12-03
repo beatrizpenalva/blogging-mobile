@@ -11,14 +11,14 @@ export const useLogin = () => {
     const [loading, setLoading] = useState(false)
 
     const { navigate } = useNavigation<TimelineScreenNavigationProp>()
-    const { setToken } = usePermission()
+    const { setUserInfo } = usePermission()
     const { setSnackbar } = useSnackbar()
 
     const loginUser = async ({ username, password }: UserPayload) => {
         setLoading(true)
         try {
             const { token } = await postLogin({ username, password })
-            setToken(token)
+            setUserInfo({ token, user: username })
 
             navigate("app/screens/Timeline/index")
         } catch {

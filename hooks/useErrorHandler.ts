@@ -8,14 +8,14 @@ import { useSnackbar } from "./useSnackbar"
 
 export const useErrorHandler = () => {
     const { navigate } = useNavigation<LoginScreenNavigationProp>()
-    const { setToken } = usePermission()
+    const { setUserInfo } = usePermission()
     const { setSnackbar } = useSnackbar()
 
     const errorHandler = (e: any, message: string) => {
         const { statusCode } = e?.response?.data as ApiResponseDataUnknown
 
         if (statusCode == 401) {
-            setToken("")
+            setUserInfo({ token: "", user: "" })
 
             setSnackbar({
                 message: "Permissão expirada. Por favor, faça o login novamente.",

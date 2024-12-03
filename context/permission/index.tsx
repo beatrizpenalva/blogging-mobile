@@ -1,23 +1,20 @@
 import { createContext, useMemo, useState, type PropsWithChildren } from "react"
 
-type PermissionContextState = {
+export type PermissionContextState = {
     token: string
-}
-
-export type PermissionContextValue = {
-    token: string
-    setToken: (token: string) => void
+    user: string
 }
 
 export const DEFAULT_PERMISSION_STATE: PermissionContextState = {
     token: "",
+    user: "",
 }
 
 export const PermissionContext = createContext({
     permission: DEFAULT_PERMISSION_STATE,
     setPermission: (permission: PermissionContextState) => {
         if (!permission) {
-            throw new Error("Misuse when try to get token.")
+            throw new Error("Misuse when of set permission context.")
         }
     },
 })

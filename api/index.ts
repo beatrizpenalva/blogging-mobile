@@ -14,6 +14,7 @@ type Token = {
 }
 
 export type PostPayload = {
+    author: string
     title: string
     content: string
     author: string

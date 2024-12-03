@@ -18,7 +18,6 @@ import { PostFormFields, PostFormValues, PostSchema } from "./PostSchema"
 const FORM_DEFAULT_VALUES = {
     title: "",
     description: "",
-    author: "",
 }
 
 const CreatePost = () => {
@@ -50,12 +49,6 @@ const CreatePost = () => {
                         label="Conteúdo"
                         multiline
                         placeholder="Escreva o que deseja publicar"
-                    />
-                    <FormTextField
-                        fieldName={PostFormFields.author}
-                        label="Autor"
-                        multiline
-                        placeholder="Autor da publicação"
                     />
                     <View style={styles.buttonsContainer}>
                         <Button fullWidth label="Salvar" loading={loading} onPress={handleSubmit(handleSavePost)} />
